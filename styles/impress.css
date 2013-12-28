@@ -67,7 +67,6 @@ body {
     Now let's bring some text styles back ...
 */
 b, strong { font-weight: bold }
-i, em { font-style: italic }
 
 /*
     ... and give links a nice look.
@@ -114,7 +113,7 @@ h2 strong {
 
 .step {
     position: relative;
-    opacity: 0.3;
+    opacity: 0;
     margin: 0;
     width: 1000px;
     padding: 30px;
@@ -140,15 +139,14 @@ h2 strong {
 */
 
 .photo {
+    width: auto;
     opacity: 0;
-    box-shadow: 0 0 20px #000;
+    /*box-shadow: 0 0 20px #000;*/
     transition: 1s .5s;
-    -webkit-transform: rotate(0) scale(.1);
 }
 
 .active .photo {
     opacity: 1;
-    -webkit-transform: rotate(720deg) scale(1);
 }
 
 /*
@@ -195,7 +193,6 @@ h2 strong {
 }
 
 .number em {
-    font-style: normal;
     font-weight: bold;
 }
 
@@ -209,7 +206,7 @@ h2 strong {
 
 .number-right.active q b,
 .number-right.past q b {
-    -webkit-transform: translate(22%, -50%) scale(.7);
+    -webkit-transform: translate(50%, -50%) scale(.7);
 }
 
 .number-right q span {
@@ -226,7 +223,7 @@ h2 strong {
 
 .number-top.active q b,
 .number-top.past q b {
-    -webkit-transform: translate(-50%, -90%) scale(.7);
+    -webkit-transform: translate(-50%, -110%) scale(.7);
 }
 
 .number-top q span {
@@ -239,8 +236,8 @@ h2 strong {
     -webkit-transform: translateX(0);
 }
 
-#responsive-photo {
-    width: auto;
+#responsive-devices {
+    text-align: center;
 }
 
 

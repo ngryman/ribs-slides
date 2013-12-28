@@ -12,6 +12,7 @@
 
     <link href="styles/fonts.css" rel="stylesheet">
     <link href="styles/impress.css" rel="stylesheet">
+    <link href="styles/devices-loop.css" rel="stylesheet">
 
     <link rel="shortcut icon" href="favicon.png">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -46,29 +47,44 @@
         <h2><strong>Responsive</strong> web design?</h2>
     </div>
 
-    <div id="responsive-photo" class="step" data-x="2000" data-y="0">
-        <img class="photo" src="images/responsive.jpg">
+    <div id="responsive-devices" class="step" data-x="0" data-y="0" data-z="-3000" data-rotate-z="45">
+        <div class="animation" data-animation-step="1">
+            <div class="device">
+                <div class="phone-home-button"></div>
+                <div class="tablet-home-button"></div>
+                <div class="screen-stand"><div class="leg"></div><div class="foot"></div></div>
+                <div class="display">
+                    <div class="slide1"><div>Works on <em>desktops</em></div></div>
+                    <div class="slide2"><div>Works on <em>tablets</em></div></div>
+                    <div class="slide3"><div>Works on <em>phones</em></div></div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div id="responsive-traffic" class="step number" data-x="4000" data-y="0">
+    <div id="responsive-traffic" class="step number" data-x="2000" data-y="0">
         <q>
             <b>16<sup>%</sup></b>
-            <span>du traffic vient d'un <em>mobile</em> ou d'une <em>tablette</em>.</span>
+            <span>du traffic Internet est un <em>mobile</em> ou une <em>tablette</em>.</span>
         </q>
     </div>
 
-    <div id="responsive-sdfs" class="step number number-right" data-x="4000" data-y="-200" data-z="200" data-rotate-x="-45">
-        <q>
-            <b>2600<sup>%</sup></b>
-            <span>de croissance prevue pour les <br><em>4 prochaines annees</em>.</span>
-        </q>
-    </div>
-
-    <div id="responsive-sadsad" class="step number number-top" data-x="4000" data-y="-300" data-z="450" data-rotate-x="-90">
+    <div id="responsive-android" class="step number number-right" data-x="2000" data-y="-200" data-z="200" data-rotate-x="-45">
         <q>
             <b>300</b>
             <span>devices Android dominent <br><em>80<sup>%</sup> du marche.</span>
         </q>
+    </div>
+
+    <div id="responsive-load-time" class="step number number-top" data-x="2000" data-y="-300" data-z="450" data-rotate-x="-90">
+        <q>
+            <b>87<sup>%</sup></b>
+            <span>des usagers <em>mobile</em> s'attendent a ce que les sites chargent <em>aussi vite</em> voir <em>plus vite</em> que sur desktop.</span>
+        </q>
+    </div>
+
+    <div id="fdsf" class="step photo" data-x="8000" data-y="0">
+        <img src="images/weight.png">
     </div>
 
 </div>
@@ -90,6 +106,38 @@
 -->
 <script src="lib/impress.js"></script>
 <script>impress().init();</script>
+<script>
+    var impress = document.getElementById('impress'),
+        intervalId;
+
+    function responsiveDevicesEnter() {
+        var duration = 6000, steps = 3, step = 1;
+
+        intervalId = setInterval(function() {
+            document.querySelector('.animation').setAttribute('data-animation-step', step = ++step > steps ? 1 : step);
+        }, duration / steps );
+    }
+
+    function responsiveDevicesLeave() {
+        clearInterval(intervalId);
+    }
+
+    function callHandler(type, e) {
+        // extract id & camelize
+        var id = e.target.id.replace(/-(\w)/g, function(match) {
+            return match[1].toUpperCase();
+        });
+
+        // call appropriate handler if it exists
+        var fn = window[id + type[0].toUpperCase() + type.slice(1)];
+        if ('undefined' != typeof fn) {
+            fn();
+        }
+    }
+
+    impress.addEventListener('impress:stepenter', callHandler.bind(null, 'enter'));
+    impress.addEventListener('impress:stepleave', callHandler.bind(null, 'leave'));
+</script>
 
 <!--
     
