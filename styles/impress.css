@@ -66,7 +66,9 @@ body {
 /*
     Now let's bring some text styles back ...
 */
-b, strong { font-weight: bold }
+b, strong {
+	font-weight: bold;
+}
 
 /*
     ... and give links a nice look.
@@ -126,6 +128,25 @@ h2 strong {
     opacity: 1
 }
 
+.step b {
+	border-bottom: 5px solid #cc3300;
+	font-family: 'prenton-ultra-condensed', Impact, sans-serif;
+	font-weight: bold;
+	font-size: 160%;
+	text-transform: uppercase;
+}
+
+.step em {
+	font-weight: bold;
+}
+
+/*
+	Common classes
+*/
+.fadeout {
+	-webkit-animation: fadeout 100s linear 4s;
+}
+
 /*
     Title type.
 */
@@ -161,7 +182,7 @@ h2 strong {
     opacity: .3;
 }
 
-.number q b {
+.number q strong {
     position: absolute;
     z-index: 1;
     top: 50%;
@@ -174,8 +195,8 @@ h2 strong {
     color: #cc3300;
 }
 
-.number.active q b,
-.number.past q b {
+.number.active q strong,
+.number.past q strong {
     -webkit-transform: translate(-150%, -50%) scale(.7);
 }
 
@@ -192,10 +213,6 @@ h2 strong {
     -webkit-transform: translateX(25%);
 }
 
-.number em {
-    font-weight: bold;
-}
-
 .number a {
     position: fixed;
     left: 0;
@@ -204,8 +221,8 @@ h2 strong {
 
 /* right mod */
 
-.number-right.active q b,
-.number-right.past q b {
+.number-right.active q strong,
+.number-right.past q strong {
     -webkit-transform: translate(50%, -50%) scale(.7);
 }
 
@@ -221,8 +238,8 @@ h2 strong {
 
 /* top mod */
 
-.number-top.active q b,
-.number-top.past q b {
+.number-top.active q strong,
+.number-top.past q strong {
     -webkit-transform: translate(-50%, -110%) scale(.7);
 }
 
@@ -574,3 +591,13 @@ h2 strong {
     Thanks for reading. I hope you enjoyed it at least as much as I enjoyed writing it
     for you.
 */
+
+/*
+	Animations
+*/
+
+@-webkit-keyframes fadeout {
+	1% {
+		opacity: .1;
+	}
+}
