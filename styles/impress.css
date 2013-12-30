@@ -90,6 +90,33 @@ a:focus {
 }
 
 /*
+    Citations
+*/
+blockquote {
+    quotes: "\201C""\201D""\2018""\2019";
+}
+
+blockquote::before {
+    content: open-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    vertical-align: -0.4em;
+    color: #CCC;
+}
+
+blockquote::after {
+    content: close-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    vertical-align: -0.4em;
+    color: #CCC;
+}
+
+blockquote + strong {
+    float: right;
+}
+
+/*
     Titles
  */
 
@@ -144,7 +171,44 @@ h2 strong {
 	Common classes
 */
 .fadeout {
-	-webkit-animation: fadeout 100s linear 4s;
+	transition: 1s 4s;
+}
+
+.active .fadeout {
+    opacity: .2;
+}
+
+.emphasis {
+    display: inline-block;
+    transition: 1s 2s;
+}
+
+.active .emphasis {
+    -webkit-transform: translateY(10%) rotate(-10deg) scale(1.2);
+}
+
+/*
+    <3
+*/
+.heart {
+    width: 100%;
+    text-align: center;
+}
+
+.heart svg {
+    margin: 0 .1em;
+    vertical-align: middle;
+    -webkit-transform-origin: 50% 50%;
+    -webkit-animation-name: 'pulse';
+    -webkit-animation-duration: 1.5s;
+    -webkit-animation-delay: 6s;
+    -webkit-transform-origin:70% 70%;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+}
+
+.heart path {
+    fill: #cc3300;
 }
 
 /*
@@ -178,9 +242,9 @@ h2 strong {
     opacity: 0;
 }
 
-.number.past {
-    opacity: .3;
-}
+/*.number.past {*/
+    /*opacity: .3;*/
+/*}*/
 
 .number q strong {
     position: absolute;
@@ -257,7 +321,87 @@ h2 strong {
     text-align: center;
 }
 
+#responsive-goal q {
+    display: inline-block;
+    -webkit-transform-origin: right bottom;
+    transition: 2s 4s;
+}
 
+#responsive-goal.active q {
+    -webkit-transform: scale(1.5);
+}
+
+/*
+    Tag cloud type.
+*/
+
+.tag-cloud {
+    height: 900px;
+}
+
+.tag-cloud span {
+    position: absolute;
+    opacity: 0;
+    font-family: 'prenton-ultra-condensed', Impact, sans-serif;
+    text-transform: uppercase;
+    text-shadow: 0 0 2px #000;
+    transition: 1s;
+    -webkit-transform: translate(-1000px, -50%);
+}
+
+.tag-cloud.active span {
+    opacity: 1;
+    -webkit-transform: translate(-50%, -50%) !important;
+}
+
+.tag-cloud span:nth-child(1) {
+    font-size: 150%;
+    top: 65%;
+    left: 70%;
+    color: #777;
+    transition-delay: 1s;
+}
+
+.tag-cloud span:nth-child(2) {
+    font-size: 100%;
+    top: 35%;
+    left: 70%;
+    color: #AAA;
+    transition-delay: 1.5s;
+}
+
+.tag-cloud span:nth-child(3) {
+    font-size: 200%;
+    top: 30%;
+    left: 30%;
+    color: #666;
+    transition-delay: 2s;
+}
+
+.tag-cloud span:nth-child(4) {
+    font-size: 200%;
+    top: 70%;
+    left: 30%;
+    color: #444;
+    transition-delay: 2.5s;
+}
+
+.tag-cloud span:nth-child(5) {
+    font-size: 150%;
+    top: 80%;
+    left: 70%;
+    color: #999;
+    transition-delay: 3s;
+}
+
+.tag-cloud span:nth-child(6) {
+    font-size: 200%;
+    top: 50%;
+    left: 50%;
+    color: #cc3300;
+    transition-delay: 5s;
+    -webkit-transform: translate(-50%, -50%) scale(2);
+}
 
 
 
@@ -596,8 +740,13 @@ h2 strong {
 	Animations
 */
 
-@-webkit-keyframes fadeout {
-	1% {
-		opacity: .1;
-	}
+@-webkit-keyframes pulse {
+    0% { -webkit-transform: scale(1); }
+    30% { -webkit-transform: scale(1); }
+    40% { -webkit-transform: scale(1.08); }
+    50% { -webkit-transform: scale(1); }
+    60% { -webkit-transform: scale(1); }
+    70% { -webkit-transform: scale(1.05); }
+    80% { -webkit-transform: scale(1); }
+    100% { -webkit-transform: scale(1); }
 }
