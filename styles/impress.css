@@ -424,6 +424,12 @@ h2 strong {
     -webkit-transform: translate(-50%, -50%);
 }
 
+/* rect mod */
+
+.graphic-rect {
+    height: 625px;
+}
+
 
 /*
     Slides customization

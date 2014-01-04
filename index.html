@@ -192,9 +192,9 @@
         </q>
     </div>
 
-    <!--<div id="images-goal">-->
-        <!--Graphique avec rectangles qui deviennent une droite (pt a merger avec le precedent).-->
-    <!--</div>-->
+    <div id="images-goal" class="step graphic graphic-rect">
+
+    </div>
 
     <!--<div id="solutions-intro">-->
 
@@ -283,6 +283,26 @@
                 transform: 's1.1 1.1 ' + this.cx + ' ' + this.cy + ' t0 -20'
             }, 1000, 'bounce');
         }, 1000)
+    }
+
+    function imagesGoalEnter(el) {
+        var r = Raphael(el.id);
+
+        r.path('M0,625 L1000,0');
+        var p = r.path('M0,625 l0,-100 l160,0 l0,-120 l192,0 l0,-310 l496,0 l0,-95 l152,0');
+
+//        setTimeout(function() {
+//        p.animate({
+//            path: 'M0,625 l0,0 l160,-100 l0,0 l192,-120 l0,0 l496,-310 l0,0 l152,-95'
+//        }, 1000);
+
+        // M0,625 l160,-100 l0,0 l192,-120 l0,0 l496,-310 l0,0 l152,-95 l0,0
+
+//        }, 1000);
+//        r.rect(0, 525, 160, 100);
+//        r.rect(160, 370, 250, 255);
+//        r.rect(410, 90, 450, 535);
+//        r.rect(860, 0, 140, 625);
     }
 
     function callHandler(type, e) {
