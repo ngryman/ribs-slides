@@ -151,11 +151,15 @@ h2 strong {
     transition: opacity 1s;
 
     /* debug */
-    background: rgba(255, 0, 0, .1);
+    /*background: rgba(255, 0, 0, .1);*/
 }
 
 .step.active {
     opacity: 1
+}
+
+.step.wide {
+    width: 1280px;
 }
 
 .step b {
@@ -319,20 +323,6 @@ h2 strong {
     -webkit-transform: translateX(0);
 }
 
-#responsive-devices {
-    text-align: center;
-}
-
-#responsive-problematic q {
-    display: inline-block;
-    -webkit-transform-origin: right bottom;
-    transition: 2s 4s;
-}
-
-#responsive-problematic.active q {
-    -webkit-transform: scale(1.5);
-}
-
 /*
     Tag cloud type.
 */
@@ -403,6 +393,82 @@ h2 strong {
     color: #cc3300;
     transition-delay: 5s;
     -webkit-transform: translate(-50%, -50%) scale(2);
+}
+
+/** right mod */
+
+.tag-cloud-right span {
+    -webkit-transform: translate(1000px, -50%);
+}
+
+/*
+    Graphic type.
+*/
+
+.graphic {
+    padding: 0;
+    height: 900px;
+}
+
+.graphic ul {
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.graphic li {
+    position: absolute;
+    color: #777;
+    -webkit-transform: translate(-50%, -50%);
+}
+
+
+/*
+    Slides customization
+*/
+
+#responsive-devices {
+    text-align: center;
+}
+
+#responsive-problematic q {
+    display: inline-block;
+    -webkit-transform-origin: right bottom;
+    transition: 2s 4s;
+}
+
+#responsive-problematic.active q {
+    -webkit-transform: scale(1.5);
+}
+
+#performance-composition strong::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    background-image: url(../images/bunny-ears.png);
+    background-size: 100%;
+    width: 418px;
+    height: 311px;
+    transition: 1s 1s;
+    -webkit-transform: translate(-30%, 10%) rotate(-20deg) scale(.1);
+}
+
+#performance-composition.active strong::before {
+    -webkit-transform: translate(-35%, -10%) rotate(-20deg);
+}
+
+#images-responsive q {
+    display: inline-block;
+    -webkit-transform-origin: 30% bottom;
+    transition: 2s 4s;
+}
+
+#images-responsive.active q {
+    -webkit-transform: scale(1.5);
 }
 
 
