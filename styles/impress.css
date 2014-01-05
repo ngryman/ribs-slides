@@ -116,6 +116,20 @@ blockquote + strong {
     float: right;
 }
 
+figure {
+	text-align: center;
+}
+
+figure figcaption {
+	margin-bottom: 1em;
+	font-weight: bold;
+}
+
+figure p {
+	margin-top: 1em;
+	font-size: 50%;
+}
+
 /*
     Titles
  */
@@ -221,21 +235,26 @@ h2 strong {
 
 .step.embed aside {
 	position: absolute;
-	bottom: -90px;
-	width: 100%;
+	top: 50%;
+	left: -100px;
+	width: 50px;
+	height: 365px;
 	text-align: center;
+	-webkit-transform: translateY(-50%);
 }
 
 .step.embed button {
+	display: block;
+	margin: 5px;
 	border: 1px solid #ccc;
 	width: 40px;
 	height: 40px;
-	background-color: #fff;
-	color: #fff;
+	background-color: #fcfcfc;
 	border-radius: 50%;
 	outline: none;
 	font-family: 'museo', georgia, serif;
 	color: #333;
+	cursor: pointer;
 }
 
 .step.embed button.is-active {
@@ -272,6 +291,12 @@ h2 strong {
 
 .active .emphasis {
     -webkit-transform: translateY(10%) rotate(-10deg) scale(1.2);
+}
+
+.smiley {
+	position: absolute;
+	top: -450px;
+	left: -400px;
 }
 
 /*
@@ -399,6 +424,17 @@ h2 strong {
     -webkit-transform: translateX(0);
 }
 
+/* static mod */
+
+.number-static q strong {
+	width: 50%;
+	text-align: center;
+}
+
+.number-static.active q strong {
+	-webkit-transform: translate(-50%, -50%);
+}
+
 /*
     Tag cloud type.
 */
@@ -519,6 +555,12 @@ h2 strong {
 
 .graphic-rect {
     height: 625px;
+}
+
+/* small legend mod */
+
+.graphic-small-legend {
+	font-size: 80%;
 }
 
 

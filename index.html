@@ -223,20 +223,32 @@
         </div>
     </div>
 
-    <div id="images-goal" class="step graphic graphic-rect">
-        <ul>
-            <li>320</li>
-            <li>768</li>
-            <li>1024</li>
-            <li>1280</li>
-        </ul>
-        <strong>Reel</strong>
-        <strong>Virtuel</strong>
+    <div id="images-goal" class="step graphic graphic-rect graphic-small-legend">
+        <strong>Reelle</strong>
+        <strong>Virtuelle</strong>
     </div>
 
-    <!--<div id="solutions-intro">-->
+    <div id="images-footprint" class="step footprint" data-x="500" data-rotate-y="-45">
+	    <figure>
+		    <figcaption>Footprint</figcaption>
+		    <img src="images/equation.gif">
+		    <p>Pondere sur 100</p>
+	    </figure>
+    </div>
 
-    <!--</div>-->
+    <div id="images-example-footprint" class="step number number-static" data-x="1000" data-z="400" data-rotate-y="-90">
+	    <q>
+		    <strong>0</strong>
+	    </q>
+	    <svg class="smiley" width="256" height="256" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+		    <g>
+			    <path fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" d="m 19.380224,39.901132 c 0,0 4.860771,5.28501 12.770151,5.28501 7.909379,0 12.770152,-5.28501 12.770152,-5.28501"/>
+			    <path fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" d="m 59.013798,30.326033 a 28.596857,28.596857 0 1 1 -57.1937144,0 28.596857,28.596857 0 1 1 57.1937144,0 z" transform="translate(1.5830593,1.5830584)" />
+			    <path fill="#fff" d="m 25.2456,20.818995 a 4.2934899,4.2512827 0 1 1 -8.58698,0 4.2934899,4.2512827 0 1 1 8.58698,0 z" transform="translate(2,0)" />
+			    <path fill="#fff" d="m 25.2456,20.818995 a 4.2934899,4.2512827 0 1 1 -8.58698,0 4.2934899,4.2512827 0 1 1 8.58698,0 z" transform="translate(20.09578,-5.2209472e-7)" />
+		    </g>
+	    </svg>
+    </div>
 
     <!--<div id="solutions-none">-->
 
@@ -256,206 +268,140 @@
 
 </div>
 
-<!--
-    
-    Last, but not least.
-    
-    To make all described above really work, you need to include impress.js in the page.
-    I strongly encourage to minify it first.
-    
-    In here I just include full source of the script to make it more readable.
-    
-    You also need to call a `impress().init()` function to initialize impress.js presentation.
-    And you should do it in the end of your document. Not only because it's a good practice, but also
-    because it should be done when the whole document is ready.
-    Of course you can wrap it in any kind of "DOM ready" event, but I was too lazy to do so ;)
-    
--->
 <script src="lib/impress.js"></script>
 <script src="lib/raphael.js"></script>
 <script src="lib/g.raphael.js"></script>
 <script src="lib/g.pie.js"></script>
+
+<script src="scripts/resolution-graph.js"></script>
+
 <script>impress().init();</script>
 <script>
-    var root = document.getElementById('impress'),
-            intervalId;
+	var root = document.getElementById('impress'),
+		graphs = {},
+		intervalId;
 
-    function responsiveDevicesEnter() {
-        var duration = 6000, steps = 3, step = 1;
+	function responsiveDevicesEnter() {
+		var duration = 6000, steps = 3, step = 1;
 
-        intervalId = setInterval(function() {
-            document.querySelector('.animation').setAttribute('data-animation-step', step = ++step > steps ? 1 : step);
-        }, duration / steps );
-    }
+		intervalId = setInterval(function() {
+			document.querySelector('.animation').setAttribute('data-animation-step', step = ++step > steps ? 1 : step);
+		}, duration / steps);
+	}
 
-    function responsiveDevicesLeave() {
-        clearInterval(intervalId);
-    }
+	function responsiveDevicesLeave() {
+		clearInterval(intervalId);
+	}
 
-    function performanceImagesEnter(el) {
-        var r = Raphael(el.id);
+	function performanceImagesEnter(el) {
+		var r = Raphael(el.id);
 
-        var pie = r.piechart(500, 450, 300, [46, 28, 2, 24], {
-            stroke: '#EEE',
-            strokewidth: 5,
-            colors: [
-                '#CC3300',
-                '#99583D',
-                '#CC9114',
-                '#CCC'
-            ]
-        });
+		var pie = r.piechart(500, 450, 300, [46, 28, 2, 24], {
+			stroke: '#EEE',
+			strokewidth: 5,
+			colors: [
+				'#CC3300',
+				'#99583D',
+				'#CC9114',
+				'#CCC'
+			]
+		});
 
-        var legend = el.querySelectorAll('ul li');
-        legend[0].style.left = '50%';
-        legend[0].style.top = '5%';
-        legend[1].style.left = '85%';
-        legend[1].style.top = '75%';
-        legend[2].style.left = '15%';
-        legend[2].style.top = '75%';
-        legend[3].style.left = '3%';
-        legend[3].style.top = '47%';
+		var legend = el.querySelectorAll('ul li');
+		legend[0].style.left = '50%';
+		legend[0].style.top = '5%';
+		legend[1].style.left = '85%';
+		legend[1].style.top = '75%';
+		legend[2].style.left = '15%';
+		legend[2].style.top = '75%';
+		legend[3].style.left = '3%';
+		legend[3].style.top = '47%';
 
-        setTimeout(function() {
-            pie[0][0].animate({
-                transform: 's1.1 1.1 ' + this.cx + ' ' + this.cy + ' t0 -20'
-            }, 1000, 'bounce');
-        }, 1000);
-    }
+		setTimeout(function() {
+			pie[0][0].animate({
+				transform: 's1.1 1.1 ' + this.cx + ' ' + this.cy + ' t0 -20'
+			}, 1000, 'bounce');
+		}, 1000);
+	}
 
-    function imagesGoalEnter(el) {
-        var p, p1, p2, p3;
+	function imagesGoalEnter(el) {
+		var graph = new ResolutionGraph(el, [ 320, 768, 1024, 1280 ]),
+			step = 0;
 
-        var r = Raphael(el.id, '100%', '100%');
-        r.setViewBox(-20, -20, 1960, 1960);
-        r.canvas.setAttribute('preserveAspectRatio', 'none');
+		graph.click(function(rects, step) {
+			switch (step) {
+				case 1:
+					rects.forEach(function(r) {
+						r.animate({ opacity: 1 }, 1000);
+					});
+					break;
 
-        /** rectangles */
-        p = r.path('M0,1920 L0,1600 L320,1600');
-        p.attr('fill', '#CC3300');
-        p.attr('stroke-width', 5);
-        p = r.path('M320,1600 L320,1152 L768,1152');
-        p.attr('fill', '#CC3300');
-        p.attr('stroke-width', 5);
-        p1 = r.path('M768,1152 L768,896 L1024,896');
-        p1.attr('fill', '#CC3300');
-        p1.attr('stroke-width', 5);
-        p2 = r.path('M1024,896 L1024,640 L1280,640');
-        p2.attr('fill', '#CC3300');
-        p2.attr('stroke-width', 5);
-        p3 = r.path('M1280,640 L1280,0 L1920,0');
-        p3.attr('fill', '#CC3300');
-        p3.attr('stroke-width', 5);
+				case 2:
+					rects.forEach(function(r) {
+						r.animate({ 'fill-opacity': 1 }, 1000);
+					});
+					break;
 
-        /** line */
-        p = r.path('M0,1920 L1920,0');
-        p.attr('stroke', '#444');
-        p.attr('stroke-width', 15);
+				case 3:
+					rects[2].animate({ path: 'M768,1152 L1024,1152 L1024,896' }, 1000);
+					break;
 
-        /** breakpoints */
-        p = r.path('M320,0 l0,1920');
-        p = r.path('M768,0 l0,1920');
-        p = r.path('M1024,0 l0,1920');
-        p = r.path('M1280,0 l0,1920');
+				case 4:
+					rects[3].animate({ opacity: 0 }, 1000);
+					rects[4].animate({ path: 'M1024,896 L1024,0 L1920,0' }, 1000);
+					break;
+			}
+		});
 
-        var legend = el.querySelectorAll('ul li');
-        legend[0].style.left = '17.5%';
-        legend[0].style.top = '105%';
-        legend[0].style.fontSize = '80%';
-        legend[1].style.left = '40%';
-        legend[1].style.top = '105%';
-        legend[1].style.fontSize = '80%';
-        legend[2].style.left = '53%';
-        legend[2].style.top = '105%';
-        legend[2].style.fontSize = '80%';
-        legend[3].style.left = '67%';
-        legend[3].style.top = '105%';
-        legend[3].style.fontSize = '80%';
+		graphs['images'] = graph;
+	}
 
-        p1.animate({
-            path: 'M768,1152 L1024,1152 L1024,896'
-        }, 1000);
+	function imagesExampleFootprintEnter(el) {
+		var graph = graphs['images'],
+			footprint = graph.footprint(),
+			i = 0,
+			el = el.querySelector('strong');
 
-        p2.animate({
-            opacity: 0
-        }, 1000);
+		var intervalId = setInterval(function() {
+			el.innerText = ++i;
+			if (footprint == i) clearInterval(intervalId);
+		}, 30);
 
-        p3.animate({
-            path: 'M1024,896 L1024,0 L1920,0'
-        }, 1000);
+	}
 
-//        setTimeout(function() {
-//        p.animate({
-//            path: 'M0,625 l0,0 l160,-100 l0,0 l192,-120 l0,0 l496,-310 l0,0 l152,-95'
-//        }, 1000);
+	function callHandler(type, e) {
+		// extract id & camelize
+		var id = e.target.id.replace(/-(\w)/g, function(match) {
+			return match[1].toUpperCase();
+		});
 
-        // M0,625 l160,-100 l0,0 l192,-120 l0,0 l496,-310 l0,0 l152,-95 l0,0
+		// call appropriate handler if it exists
+		var fn = window[id + type[0].toUpperCase() + type.slice(1)];
+		if ('undefined' != typeof fn) {
+			fn(e.target);
+		}
+	}
 
-//        }, 1000);
-//        r.rect(0, 525, 160, 100);
-//        r.rect(160, 370, 250, 255);
-//        r.rect(410, 90, 450, 535);
-//        r.rect(860, 0, 140, 625);
-    }
+	root.addEventListener('impress:stepenter', callHandler.bind(null, 'enter'));
+	root.addEventListener('impress:stepleave', callHandler.bind(null, 'leave'));
 
-    function callHandler(type, e) {
-        // extract id & camelize
-        var id = e.target.id.replace(/-(\w)/g, function(match) {
-            return match[1].toUpperCase();
-        });
+	/**
+	 * Devices buttons
+	 */
 
-        // call appropriate handler if it exists
-        var fn = window[id + type[0].toUpperCase() + type.slice(1)];
-        if ('undefined' != typeof fn) {
-            fn(e.target);
-        }
-    }
+	var buttons = document.querySelectorAll('.embed button');
+	for (var i = 0; i < buttons.length; i++) {
+		buttons[i].addEventListener('click', function(e) {
+			var size = parseInt(e.target.innerText);
+			var container = e.target.parentNode.parentNode;
+			container.style.width = size + 'px';
 
-    root.addEventListener('impress:stepenter', callHandler.bind(null, 'enter'));
-    root.addEventListener('impress:stepleave', callHandler.bind(null, 'leave'));
-
-    /**
-     * Devices buttons
-     */
-
-    var buttons = document.querySelectorAll('.embed button');
-    for (var i = 0; i < buttons.length; i++) {
-        buttons[i].addEventListener('click', function(e) {
-            var size = parseInt(e.target.innerText);
-            var container = e.target.parentNode.parentNode;
-            container.style.width = size + 'px';
-
-            var active = container.querySelector('.is-active');
-            if (active) active.classList.remove('is-active');
-            e.target.classList.add('is-active');
-        });
-    }
+			var active = container.querySelector('.is-active');
+			if (active) active.classList.remove('is-active');
+			e.target.classList.add('is-active');
+		});
+	}
 </script>
-
-<!--
-    
-    The `impress()` function also gives you access to the API that controls the presentation.
-    
-    Just store the result of the call:
-    
-        var api = impress();
-    
-    and you will get three functions you can call:
-    
-        `api.init()` - initializes the presentation,
-        `api.next()` - moves to next step of the presentation,
-        `api.prev()` - moves to previous step of the presentation,
-        `api.goto( idx | id | element, [duration] )` - moves the presentation to the step given by its index number
-                id or the DOM element; second parameter can be used to define duration of the transition in ms,
-                but it's optional - if not provided default transition duration for the presentation will be used.
-    
-    You can also simply call `impress()` again to get the API, so `impress().next()` is also allowed.
-    Don't worry, it wont initialize the presentation again.
-    
-    For some example uses of this API check the last part of the source of impress.js where the API
-    is used in event handlers.
-    
--->
 
 </body>
 </html>
