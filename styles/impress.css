@@ -178,6 +178,15 @@ h2 strong {
     width: 1280px;
 }
 
+.step.center {
+    text-align: center;
+}
+
+.step.center strong {
+    display: block;
+    margin-bottom: 1em;
+}
+
 .step.embed {
 	width: 1280px;
 	height: 1000px;
