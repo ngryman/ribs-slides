@@ -169,7 +169,7 @@
     <div id="images-comparison-hnic" class="step embed embed-landscape" data-y="1500" data-rotate="90">
         <div>
             <div>
-                <iframe src="http://hockeynight2ndscreen.cbc.ca/" frameborder="0"></iframe>
+                <!--<iframe src="http://hockeynight2ndscreen.cbc.ca/" frameborder="0"></iframe>-->
             </div>
 
             <aside>
@@ -188,7 +188,7 @@
     <div id="images-comparison-amc" class="step embed embed-landscape" data-y="1500" data-z="10" data-rotate="90" data-rotate-y="180">
         <div>
             <div>
-                <iframe src="http://www.amctv.com/shows/the-walking-dead/episodes/season-4/too-far-gone/story-sync" frameborder="0"></iframe>
+                <!--<iframe src="http://www.amctv.com/shows/the-walking-dead/episodes/season-4/too-far-gone/story-sync" frameborder="0"></iframe>-->
             </div>
 
             <aside>
@@ -207,7 +207,7 @@
     <div id="images-comparison-purple" class="step embed embed-landscape">
         <div>
             <div>
-                <iframe src="http://duo.tv5.ca/channel/tv5" frameborder="0"></iframe>
+                <!--<iframe src="http://duo.tv5.ca/channel/tv5" frameborder="0"></iframe>-->
             </div>
 
             <aside>
@@ -223,14 +223,28 @@
         </div>
     </div>
 
-    <div id="images-goal" class="step graphic graphic-rect graphic-small-legend">
+    <div id="images-triangle" class="step graphic center" data-z="5000">
+        <ul>
+            <li>Performance</li>
+            <li>Qualite</li>
+            <li>Cout</li>
+        </ul>
+    </div>
+
+    <div id="images-performance" class="step center wide" data-z="1000">
+        <q>
+            <h2>Performance</h2>
+        </q>
+    </div>
+
+    <div id="images-goal" class="step graphic graphic-rect graphic-small-legend" data-rotate-z="45">
         <strong>Reelle</strong>
         <strong>Virtuelle</strong>
     </div>
 
     <!--breakpoints pas adapte aux images-->
 
-    <div id="images-footprint" class="step footprint" data-x="500" data-rotate-y="-45">
+    <div id="images-footprint" class="step footprint" data-x="500" data-rotate-y="-45" data-rotate-z="45">
 	    <figure>
 		    <figcaption>Footprint</figcaption>
 		    <!--1-e^{\left (-5 \tfrac{\sum a_{i}}{w^{2}} \right )}-->
@@ -239,13 +253,13 @@
 	    </figure>
     </div>
 
-    <div id="images-footprint-curve" class="step" data-x="500" data-rotate-y="-45">
+    <div id="images-footprint-curve" class="step" data-x="500" data-rotate-y="-45" data-rotate-z="45">
 	    <figure>
 		    <img src="images/curve.svg">
 	    </figure>
     </div>
 
-    <div id="images-example-footprint" class="step number number-static" data-x="1000" data-z="400" data-rotate-y="-90">
+    <div id="images-example-footprint" class="step number number-static" data-x="1000" data-z="400" data-rotate-y="-90" data-rotate-z="45">
 	    <q>
 		    <strong>0</strong>
 	    </q>
@@ -259,9 +273,14 @@
 	    <!--</svg>-->
     </div>
 
-    <div id="images-quality" class="step center wide" data-x="1000">
+    <div id="images-quality" class="step center wide" data-x="1000" data-z="1000">
         <q>
-            <strong>Qualite</strong>
+            <h2>Qualite</h2>
+        </q>
+    </div>
+
+    <div id="images-quality-lena" class="step center wide" data-x="1000" data-rotate-z="45">
+        <q>
             <img width="375" src="images/lena-5.jpg">
             <img width="375" src="images/lena-10.jpg">
             <img width="375" src="images/lena.jpg">
@@ -269,20 +288,20 @@
         </q>
     </div>
 
-    <div id="images-quality-browsers" class="step">
+    <div id="images-quality-browsers" class="step" data-x="1500" data-rotate-y="-45" data-rotate-z="45">
         <blockquote>
             Nous sommes concus pour resampler les images de <strong>maniere performante</strong>.
         </blockquote>
         <strong>Un navigateur</strong>
     </div>
 
-    <div id="images-quality-hard" class="step">
+    <div id="images-quality-hard" class="step" data-x="2000" data-z="400" data-rotate-y="-90" data-rotate-z="45">
         <q>
-            Resampler correctement une image demande un <strong>savoir faire</strong>.
+            <span class="fadeout">Resampler correctement une image demande un</span> <strong>savoir faire</strong>.
         </q>
     </div>
 
-    <div id="images-quality-algorithm" class="step tag-cloud tag-cloud">
+    <div id="images-quality-algorithm" class="step tag-cloud tag-cloud" data-x="2000" data-z="400" data-rotate-y="-90" data-rotate-z="45">
         <span>Bilinear</span>
         <span>Bicubic</span>
         <span>Sinc</span>
@@ -293,15 +312,28 @@
         </span>
     </div>
 
-    <div id="images-cost" class="step" data-x="1000">
+    <div id="images-cost" class="step center wide" data-x="2000">
+        <q>
+            <h2>Cout</h2>
+        </q>
+    </div>
+
+    <div id="images-cost-description" class="step" data-x="2000">
         Installation, temps, changement, scalabilite, prix.
+    </div>
+
+    <div id="images-cost-cache" class="step">
+        <blockquote>
+            There are only two hard things in Computer Science: <strong>cache invalidation</strong> and naming things.
+        </blockquote>
+        <strong>Phil Karlton</strong>
     </div>
 
     <div id="solutions" class="step title" data-x="1000">
         <h2>Quelles <strong>Solutions</strong>?</h2>
     </div>
 
-    <div id="solutions-none" class="step"  data-x="1000" data-z="-1000">
+    <div id="solutions-none" class="step" data-x="1000" data-z="-1000">
         <q>Aucune</q>
         <table>
             <tr>
@@ -319,7 +351,7 @@
         </table>
     </div>
 
-    <div id="solutions-manual" class="step"  data-x="1000" data-z="-2000">
+    <div id="solutions-manual" class="step" data-x="1000" data-y="1000" data-z="-1000" data-rotate="90">
         <q>Manuelle</q>
         <table>
             <tr>
@@ -337,7 +369,7 @@
         </table>
     </div>
 
-    <div id="solutions-build" class="step"  data-x="1000" data-z="-3000">
+    <div id="solutions-build" class="step" data-x="1000" data-y="1000" data-z="-1000" data-rotate="0">
         <q>Build</q>
         <table>
             <tr>
@@ -355,7 +387,7 @@
         </table>
     </div>
 
-    <div id="solutions-on-demand" class="step"  data-x="1000" data-z="-4000">
+    <div id="solutions-on-demand" class="step" data-x="1000" data-y="1000" data-z="-1000" data-rotate="360">
         <q>On demand</q>
         <table>
             <tr>
@@ -373,7 +405,129 @@
         </table>
     </div>
 
+    <div id="solutions-better" class="step title">
+        <q>
+            <h2>Peut-on arriver a <strong>★★★★★</strong> ?</h2>
+        </q>
+    </div>
 
+    <div id="solutions-better-no" class="step title">
+        <q>
+            <h2><strong>Non</strong> mais <strong>...</strong></h2>
+        </q>
+    </div>
+
+    <div id="solutions-best" class="step title">
+        <q>
+            <h2><strong>...</strong> on peut arriver a <strong>★★★★★★</strong> !</h2>
+        </q>
+    </div>
+
+    <div id="ribs" class="step title">
+        <q>
+            <h2><strong>RIBS</strong>.</h2>
+        </q>
+    </div>
+
+    <div id="ribs-pitch" class="step center extra-wide">
+        <img class="lena" src="images/lena.jpg"><span>+</span>
+        <img class="cloud" src="images/cloudflare.png"><span>=</span>
+        <div class="animation" data-animation-step="1">
+            <div class="device">
+                <div class="phone-home-button"></div>
+                <div class="tablet-home-button"></div>
+                <div class="screen-stand"><div class="leg"></div><div class="foot"></div></div>
+                <div class="display">
+                    <div class="slide1"><div><img src="images/lena.jpg"></div></div>
+                    <div class="slide2"><div><img src="images/lena.jpg"></div></div>
+                    <div class="slide3"><div><img src="images/lena.jpg"></div></div>
+                </div>
+            </div>
+        </div>
+        <strong>ribs</strong>
+        <!--<q>-->
+            <!--Sass + CDN-->
+            <!--- Service de processing d'image, payable à l'image.-->
+              <!--- On paye se qu'on consomme-->
+              <!--- Pas de barrières, de BFR-->
+            <!--- CDN-->
+              <!--- On paye encore moins car Cloudflare -> gratuit-->
+              <!--- Rapide-->
+              <!--- Géo-localisé-->
+            <!--- Détection client-->
+            <!--- Console de gestion-->
+        <!--</q>-->
+    </div>
+
+    <div id="ribs-performances" class="step">
+        <q>
+            Hautes performances
+        </q>
+    </div>
+
+    <div id="ribs-quality" class="step">
+        <q>
+            Qualite
+        </q>
+    </div>
+
+    <div id="ribs-transcoding" class="step">
+        <q>
+            PNG + GIF + JPEG = WebP
+            WebP + feature detection
+        </q>
+    </div>
+
+    <div id="ribs-art-direction" class="step">
+        <q>
+            Explication
+        </q>
+    </div>
+
+    <div id="ribs-future" class="step">
+        <q>
+            - Pre-caching
+            - Permettre de modifier les parametres de sharpening (et autres) par image.
+            - Détection cliente a d'autres plateformes: iOS, Android, Wordpress, etc...
+            - Partenariats avec des plateformes de blogging ou autres.
+        </q>
+    </div>
+
+    <div id="ribs-solutions" class="step title">
+        <q>RIBS</q>
+        <table>
+            <tr>
+                <th>Performance</th>
+                <td>★★★★★</td>
+            </tr>
+            <tr>
+                <th>Qualite</th>
+                <td>★★★★★</td>
+            </tr>
+            <tr>
+                <th>Cout</th>
+                <td>★★★★★</td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="ribs-competitors" class="step">
+        - responsive.io
+        - ress.io
+        - adaptive-images.com
+        - resrc.it
+          - liste
+          - etat des lieux
+          - comparaison
+          - cdn intelligents: akamai
+    </div>
+
+    <div id="ribs-advantages" class="step">
+        - prix
+        - performance, TTFB
+        - qualite
+        - scaling, pas de BFR
+    </div>
 
     <!--<div id="solutions-on-demand">-->
 
@@ -382,23 +536,27 @@
 </div>
 
 <script src="lib/impress.js"></script>
+<script src="lib/impress-console.js"></script>
 <script src="lib/raphael.js"></script>
 <script src="lib/g.raphael.js"></script>
 <script src="lib/g.pie.js"></script>
 
 <script src="scripts/resolution-graph.js"></script>
 
-<script>impress().init();</script>
+<script>
+    impress().init();
+    impressConsole().init('styles/impress-console.css');
+</script>
 <script>
 	var root = document.getElementById('impress'),
 		graphs = {},
 		intervalId;
 
-	function responsiveDevicesEnter() {
+	function responsiveDevicesEnter(el) {
 		var duration = 6000, steps = 3, step = 1;
 
 		intervalId = setInterval(function() {
-			document.querySelector('.animation').setAttribute('data-animation-step', step = ++step > steps ? 1 : step);
+			el.querySelector('.animation').setAttribute('data-animation-step', step = ++step > steps ? 1 : step);
 		}, duration / steps);
 	}
 
@@ -437,9 +595,85 @@
 		}, 1000);
 	}
 
+    function imagesTriangleEnter(el) {
+//        var r = Raphael(el.id, 900, 900),
+//            p;
+<!---->
+//        p = r.path('M450,100 l445,600 l-890,0 l445,-600');
+//        p.attr('stroke-width', 5);
+//        p.attr('stroke-linecap', 'square');
+//        p.attr('stroke-linejoin', 'miter');
+
+        var legend = el.querySelectorAll('ul li');
+        legend[0].style.left = '51%';
+        legend[0].style.top = '3%';
+        legend[1].style.left = '96%';
+        legend[1].style.top = '85%';
+        legend[2].style.left = '5%';
+        legend[2].style.top = '85%';
+
+        var canvas = document.createElement('canvas'),
+            ctx = canvas.getContext('2d');
+
+        var p1x = 455, p1y = 100,
+            p2x = 890, p2y = 700,
+            p3x = 10,   p3y = 700;
+
+        canvas.width = 900;
+        canvas.height = 900;
+
+        ctx.webkitImageSmoothingEnabled = true;
+
+        var d = 0, incr = 0.005, step = 0;
+        intervalId = requestAnimationFrame(function frame() {
+            var m = [
+                { x: (p2x - p1x) * d + p1x, y: (p2y - p1y) * d + p1y },
+                { x: (p3x - p2x) * d + p2x, y: (p3y - p2y) * d + p2y },
+                { x: (p1x - p3x) * d + p3x, y: (p1y - p3y) * d + p3y }
+            ];
+
+            ctx.clearRect(0, 0, 900, 900);
+
+            ctx.fillStyle = 'rgba(204, 51, 0, 1)';
+            ctx.lineWidth = 2;
+
+            // moving area
+            ctx.beginPath();
+            ctx.moveTo(m[0].x, m[0].y);
+            ctx.lineTo(m[1].x, m[1].y);
+            ctx.lineTo(m[2].x, m[2].y);
+            ctx.closePath();
+            ctx.stroke();
+            ctx.fill();
+
+            // triangle
+            ctx.strokeStyle = '#000';
+            ctx.lineWidth = 10;
+            ctx.beginPath();
+            ctx.moveTo(p1x, p1y);
+            ctx.lineTo(p2x, p2y);
+            ctx.lineTo(p3x, p3y);
+            ctx.closePath();
+            ctx.stroke();
+
+            d += incr;
+            if (d > 1) {
+                d = 0;
+                step++;
+            }
+
+            intervalId = requestAnimationFrame(frame);
+        });
+
+        el.appendChild(canvas);
+    }
+
+    function imagesTriangleLeave() {
+        cancelAnimationFrame(intervalId);
+    }
+
 	function imagesGoalEnter(el) {
-		var graph = new ResolutionGraph(el, [ 320, 768, 1024, 1280 ]),
-			step = 0;
+		var graph = new ResolutionGraph(el, [ 320, 768, 1024, 1280 ]);
 
 		graph.click(function(rects, step) {
 			switch (step) {
@@ -481,6 +715,18 @@
 		}, 30);
 
 	}
+
+    function ribsPitchEnter(el) {
+        var duration = 6000, steps = 3, step = 1;
+
+        intervalId = setInterval(function() {
+            el.querySelector('.animation').setAttribute('data-animation-step', step = ++step > steps ? 1 : step);
+        }, duration / steps);
+    }
+
+    function ribsPitchLeave() {
+        clearInterval(intervalId);
+    }
 
 	function callHandler(type, e) {
 		// extract id & camelize

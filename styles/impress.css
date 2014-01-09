@@ -178,6 +178,10 @@ h2 strong {
     width: 1280px;
 }
 
+.step.extra-wide {
+    width: 1600px;
+}
+
 .step.center {
     text-align: center;
 }
@@ -619,6 +623,77 @@ h2 strong {
     -webkit-transform: scale(1.5);
 }
 
+#images-quality-hard q {
+    display: inline-block;
+    -webkit-transform-origin: right bottom;
+    transition: 2s 2s;
+}
+
+#images-quality-hard.active q {
+    -webkit-transform: translateX(-15%) scale(1.5);
+}
+
+#images-quality-hard .fadeout {
+    transition: 1s 2s;
+}
+
+#ribs-pitch > * {
+    vertical-align: middle;
+}
+
+#ribs-pitch span {
+    margin: 40px;
+    font-size: 200%;
+    font-weight: bold;
+}
+
+#ribs-pitch strong {
+    position: absolute;
+    top: 67%;
+    left: 35%;
+}
+
+#ribs-pitch .lena {
+    width: 150px;
+    height: auto;
+}
+
+#ribs-pitch .cloud {
+    margin-left: -15px;
+    width: 400px;
+    height: auto;
+}
+
+#ribs-pitch .animation {
+    margin-left: -80px;
+}
+
+#ribs-pitch .animation .device .display div  {
+    background: #000;
+}
+
+#ribs-pitch .animation .device .display div div {
+    top: 0;
+    height: 100%;
+}
+
+#ribs-pitch .animation .device .display div div img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: auto;
+    -webkit-transform: translate(-50%, -50%);
+}
+
+#ribs-pitch .animation .device .display .slide2 div {
+    top: 14px;
+}
+
+#ribs-pitch .animation .device .display .slide2 img {
+    width: auto;
+    height: 100%;
+}
 
 
 
