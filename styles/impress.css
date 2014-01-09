@@ -637,36 +637,62 @@ h2 strong {
     transition: 1s 2s;
 }
 
-#ribs-pitch > * {
-    vertical-align: middle;
+#ribs-pitch::before {
+    content: '';
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    border-top: 3px dashed #333;
+    width: 60%;
+    transition: 2s 2s;
 }
 
-#ribs-pitch span {
-    margin: 40px;
-    font-size: 200%;
-    font-weight: bold;
+#ribs-pitch.active::before {
+    opacity: 1;
+}
+
+#ribs-pitch > * {
+    opacity: 0;
+    vertical-align: middle;
 }
 
 #ribs-pitch strong {
     position: absolute;
-    top: 67%;
+    top: 70%;
     left: 35%;
+    transition: 2s 1s;
+}
+
+#ribs-pitch.active strong {
+    opacity: 1;
 }
 
 #ribs-pitch .lena {
+    opacity: 1;
     width: 150px;
     height: auto;
 }
 
 #ribs-pitch .cloud {
-    margin-left: -15px;
-    width: 400px;
+    margin-left: 80px;
+    width: 500px;
     height: auto;
 }
 
-#ribs-pitch .animation {
-    margin-left: -80px;
+#ribs-pitch.active .cloud {
+    opacity: 1;
+    transition: 2s .5s;
 }
+
+#ribs-pitch .animation {
+    margin-left: 20px;
+    transition: 2s 1.5s;
+}
+#ribs-pitch.active .animation {
+    opacity: 1;
+}
+
 
 #ribs-pitch .animation .device .display div  {
     background: #000;
