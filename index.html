@@ -473,8 +473,7 @@
 
     <div id="ribs-transcoding" class="step">
         <q>
-            PNG + GIF + JPEG = WebP
-            WebP + feature detection
+            PNG + GIF + JPEG = <img src="images/webp.png">
         </q>
     </div>
 
@@ -519,6 +518,11 @@
         <img src="images/imageresizer.jpg">
         <img src="images/sencha.jpg">
         <img src="images/akamai.jpg">
+
+        <div class="notes">
+            5 premiers concurrents directs.<br>
+            2 derniers indirects.
+        </div>
     </div>
 
     <div id="ribs-advantages" class="step">
@@ -531,6 +535,16 @@
     <div id="ribs-advantages-scaling" class="step graphic-rect">
         <strong>Traffic</strong>
         <strong>Images</strong>
+    </div>
+
+    <div id="ribs-business-model-canvas" class="step">
+
+    </div>
+
+    <div id="fake-end" class="step title">
+        <q>
+            <h2><strong>Merci</strong>!</h2>
+        </q>
     </div>
 
 </div>
@@ -749,6 +763,36 @@
         p = r.path('M0,0 l0,1100 l1980,0');
         p.attr('stroke', '#444');
         p.attr('stroke-width', 15);
+    }
+
+    function fakeEndEnter(el) {
+        setTimeout(function() {
+            el.querySelector('h2').style.display = 'none';
+            document.body.style.background = 'radial-gradient(#333, #111)';
+
+            var iframe = document.createElement('iframe');
+            iframe.id = 'hacker';
+            iframe.src = 'http://hackertyper.com/';
+            iframe.width = '100%';
+            iframe.height = '100%';
+            document.body.appendChild(iframe);
+
+            iframe.addEventListener('load', function() {
+                var e = new KeyboardEvent("keydown", { bubbles : true, cancelable : true, key : "Q", char : "Q", shiftKey : false });
+
+                var i = 0;
+
+                setInterval(function() {
+                    iframe.contentDocument.dispatchEvent(e);
+                    if (50 == i) {
+                        var yoda = document.createElement('div');
+                        yoda.id = 'yoda';
+                        document.body.appendChild(yoda);
+                    }
+                    i++;
+                }, 10);
+            });
+        }, 8000);
     }
 
 	function callHandler(type, e) {

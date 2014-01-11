@@ -306,10 +306,8 @@ h2 strong {
     -webkit-transform: translateY(10%) rotate(-10deg) scale(1.2);
 }
 
-.smiley {
-	position: absolute;
-	top: -450px;
-	left: -400px;
+.notes {
+    display: none;
 }
 
 /*
@@ -693,7 +691,6 @@ h2 strong {
     opacity: 1;
 }
 
-
 #ribs-pitch .animation .device .display div  {
     background: #000;
 }
@@ -719,6 +716,11 @@ h2 strong {
 #ribs-pitch .animation .device .display .slide2 img {
     width: auto;
     height: 100%;
+}
+
+#ribs-transcoding img {
+    vertical-align: text-bottom;
+    height: 80px;
 }
 
 #ribs-competitors {
@@ -791,6 +793,32 @@ h2 strong {
     left: -13%;
     top: 50%;
 }
+
+#fake-end q h2 {
+    -webkit-animation: distort 8s;
+}
+
+#hacker {
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    transition: 1s;
+}
+
+#yoda {
+    position: fixed;
+    top: 25%;
+    right: 25%;
+    width: 280px;
+    height: 280px;
+    background-image: url(../images/yoda.png);
+}
+
+/*#hacker.starwars {*/
+    /*-webkit-transform-style: preserve-3d;*/
+    /*-webkit-transform: perspective(1000px) rotateX(-90deg);*/
+/*}*/
 
 
 
@@ -1141,6 +1169,17 @@ h2 strong {
 
 @-webkit-keyframes move-around {
     50% { margin: 30px; }
+}
+
+@-webkit-keyframes distort {
+    20% { -webkit-transform: skewX(-15deg); }
+    25% { -webkit-transform: skewX(0); }
+    40% { -webkit-transform: skewX(-70deg); }
+    60% { -webkit-transform: skewX(40deg); }
+    70% { -webkit-transform: skewX(-85deg); }
+    80% { -webkit-transform: skewX(-85deg) rotate(270deg); }
+    90% { -webkit-transform: skewX(-85deg); }
+    99% { -webkit-transform: skewX(-85deg) rotateX(180deg) rotateY(-1080deg); }
 }
 
 .impress-console #impress div {
