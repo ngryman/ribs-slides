@@ -17,7 +17,7 @@ div#console {
 
 div#views {
     float: left;
-    width: 16em;
+    width: 22em;
     margin-right: 1em;
 }
 
@@ -41,12 +41,12 @@ div#notes p {
 }
 
 iframe#slideView {
-    width: 16em;
+    width: 22em;
     height: 12em;
 }
 
 iframe#preView {
-    width: 8em;
+    width: 10em;
     height: 6em;
 }
 

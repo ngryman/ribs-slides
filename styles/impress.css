@@ -1067,3 +1067,12 @@ h2 strong {
     80% { -webkit-transform: scale(1); }
     100% { -webkit-transform: scale(1); }
 }
+
+.impress-console #impress div {
+    transition-duration: 0 !important;
+    transition-delay: 1000ms !important;
+}
+
+.impress-console #impress div div * {
+    transition: none !important;
+}
