@@ -713,9 +713,17 @@ h2 strong {
     transition: 1s 2s;
 }
 
+#ribs h2 {
+	transition: 4s 2s;
+}
+
+#ribs.active h2 {
+	-webkit-transform: translateX(-200px);
+}
+
 #ribs span {
 	display: inline-block;
-	transition: 1s;
+	transition: 1s 2s;
 }
 
 #ribs span:after {
@@ -725,53 +733,49 @@ h2 strong {
 	width: 500px;
 	text-align: left;
 	transition: 1s;
-	-webkit-transform: translateX(-1000px);
+	-webkit-transform: translateX(-500px);
 }
 
 #ribs.active span:after {
 	opacity: 1;
-	padding-left: 10px;
+	padding-left: 5px;
 	-webkit-transform: translateX(0);
 }
 
 #ribs.active span:nth-of-type(1) {
-	-webkit-transform: translate(-200px, -225px);
-	transition-delay: 2s;
+	-webkit-transform: translate(0px, -225px);
 }
 
 #ribs span:nth-of-type(1)::after {
 	content: 'esponsive';
-	transition-delay: 2s;
+	transition-delay: 3s;
 }
 
 #ribs.active span:nth-of-type(2) {
-	-webkit-transform: translate(-200px, -100px);
-	transition-delay: 2.5s;
+	-webkit-transform: translate(0px, -100px);
 }
 
 #ribs span:nth-of-type(2)::after {
 	content: 'mages';
-	transition-delay: 2.5s;
+	transition-delay: 3.5s;
 }
 
 #ribs.active span:nth-of-type(3) {
-	-webkit-transform: translate(-200px, 25px);
-	transition-delay: 3s;
+	-webkit-transform: translate(0px, 25px);
 }
 
 #ribs span:nth-of-type(3)::after {
 	content: 'acked';
-	transition-delay: 3s;
+	transition-delay: 4s;
 }
 
 #ribs.active span:nth-of-type(4) {
-	-webkit-transform: translate(-200px, 150px);
-	transition-delay: 3.5s;
+	-webkit-transform: translate(0px, 150px);
 }
 
 #ribs span:nth-of-type(4)::after {
 	content: 'erver-side';
-	transition-delay: 3.5s;
+	transition-delay: 4.5s;
 }
 
 #ribs-pitch::before {
