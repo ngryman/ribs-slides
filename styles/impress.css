@@ -729,6 +729,7 @@ h2 strong {
 #ribs span:after {
 	opacity: 0;
 	position: absolute;
+	z-index: -1;
 	color: #333;
 	width: 500px;
 	text-align: left;
@@ -942,15 +943,24 @@ h2 strong {
 }
 
 #hacker {
-    position: fixed;
+	display: none;
+    position: absolute;
     top: 0;
     left: 0;
-    overflow: hidden;
-    transition: 1s;
+	width: 100%;
+	height: 100%;
+    transition: 3s linear 18s;
+	background: #000;
+}
+
+#hacker.active {
+	-webkit-transform: scale(.01);
+	opacity: 0;
 }
 
 #yoda {
-    position: fixed;
+    position: absolute;
+	z-index: ;
     width: 280px;
     height: 280px;
 	top: 25%;
@@ -994,6 +1004,45 @@ h2 strong {
 	right: 40px;
 	border-top: 50px solid transparent;
 	border-right: 20px solid rgba(255, 255, 255, .8);
+}
+
+#space {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+}
+
+#titles {
+	position: absolute;
+	margin-left: -500px;
+	width: 1000px;
+	height: 3000px;
+	bottom: 0;
+	left: 50%;
+	font-size: 350%;
+	text-align: justify;
+	overflow: hidden;
+	-webkit-transform-origin: 50% 100%;
+	-webkit-transform: perspective(300px) rotateX(25deg);
+}
+
+#titles-content {
+	position: absolute;
+	top: 100%;
+	color: #ff6;
+	font-family: Arial, sans-serif;
+	font-weight: bold;
+	font-size: 60px;
+	word-spacing: 5px;
+	-webkit-animation: scroll 100s linear infinite 20s;
+}
+
+#titles-content p {
+	margin-top: 50px;
 }
 
 /*#hacker.starwars {*/
@@ -1375,6 +1424,11 @@ h2 strong {
 	80% { -webkit-transform: translateX(-60%)   rotate(4deg);  }
 	90% { -webkit-transform: translateX(-80%)   rotate(-4deg); }
 	100% { -webkit-transform: translateX(-100%) rotate(4deg);  }
+}
+
+@-webkit-keyframes scroll {
+	0% { top: 100%; }
+	100% { top: -100%; }
 }
 
 .impress-console #impress div {

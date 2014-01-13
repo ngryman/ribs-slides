@@ -276,6 +276,7 @@
     <div id="images-quality" class="step center wide" data-x="1000" data-z="1000">
         <q>
             <h2>Qualite</h2>
+	        TODO: retina, ... la meilleure qualite est maintenant importante
         </q>
     </div>
 
@@ -519,18 +520,26 @@
     <div id="ribs-solutions" class="step table">
         <strong>RIBS</strong>
         <table>
-            <tr>
-	            <th>Performance <sup>x2</sup></th>
-                <td class="rating">★★★★★</td>
-            </tr>
-            <tr>
-                <th>Qualite</th>
-                <td class="rating">★★★★★</td>
-            </tr>
-            <tr>
-                <th>Cout</th>
-                <td class="rating">★★★★★</td>
-            </tr>
+	        <tbody>
+		        <tr>
+			        <th>Performance <sup>x2</sup></th>
+			        <td class="rating">★★★★★</td>
+		        </tr>
+		        <tr>
+			        <th>Qualite</th>
+			        <td class="rating">★★★★★</td>
+		        </tr>
+		        <tr>
+			        <th>Cout</th>
+			        <td class="rating">★★★★★</td>
+		        </tr>
+	        </tbody>
+	        <tfoot>
+	        <tr>
+		        <th>Total</th>
+		        <td class="rating">★★★★★</td>
+	        </tr>
+	        </tfoot>
         </table>
     </div>
 
@@ -571,6 +580,41 @@
         </q>
     </div>
 
+	<div id="open-source">
+		<!--about:mozilla-->
+	</div>
+</div>
+
+<div id="space">
+	<canvas width="100%" height="100%"></canvas>
+	<div id="titles">
+		<div id="titles-content">
+			<p>It is a period of vendor wars.</p>
+			<p>The evil empire Microsoft © is dominating the browser market.
+				With the help of their massive destruction weapon, Internet Explorer, they are now the masters of the Web.
+			</p>
+			<p>People are now subjects to bugs, slowness and precarious technology.
+			</p>
+			<p>This is the dark age of the Web...
+			</p>
+			<p>Fortunately a group of rebels have used their best strategy to prevent The Empire to dominate.
+				They have released the source code of their browser, Netscape.
+			</p>
+			<p>Using the collaboration of many resistant, they have now developed the most powerful weapon against
+				tyranny, Firefox.
+			</p>
+			<p>This terribly successful strategy was called Open Source.
+			</p>
+			<p>The Open Source now rules the Web, and The Empire is now far less powerful. It is even doing Open Source
+				itself in order to survive this new order.
+			</p>
+			<p>This is now the golden age of the Web.</p>
+		</div>
+	</div>
+</div>
+<div id="hacker">
+	<iframe src="http://hackertyper.com/" frameborder="0" width="100%" height="100%"></iframe>
+	<div id="yoda"></div>
 </div>
 
 <script src="lib/impress.js"></script>
@@ -794,17 +838,36 @@
             el.querySelector('h2').style.display = 'none';
             document.body.style.background = 'radial-gradient(#333, #111)';
 
-            var iframe = document.createElement('iframe');
-            iframe.id = 'hacker';
-            iframe.src = 'http://hackertyper.com/';
-            iframe.width = '100%';
-            iframe.height = '100%';
-            document.body.appendChild(iframe);
+	        var space = document.querySelector('#space');
+	        space.style.display = 'block';
 
-	        var yoda = document.createElement('div');
-	        yoda.id = 'yoda';
-	        document.body.appendChild(yoda);
-	        yoda.offsetWidth;
+	        var hacker = document.querySelector('#hacker');
+	        hacker.style.display = 'block';
+	        hacker.offsetWidth;
+	        hacker.classList.add('active');
+
+	        var canvas = space.querySelector('canvas');
+	        canvas.width = window.innerWidth;
+	        canvas.height = window.innerHeight;
+
+	        var ctx = canvas.getContext('2d');
+	        var width = window.innerWidth;
+	        var height = window.innerHeight;
+
+	        ctx.fillStyle = 'rgb(255, 255, 255)';
+
+	        // stars
+	        for (var i = 0; i < 400; i++) {
+		        var x = Math.random() * width;
+		        var y = Math.random() * height;
+		        var r = Math.random() * 2;
+
+		        ctx.beginPath();
+		        ctx.arc(x, y, r, 0, 2 * Math.PI, false);
+		        ctx.fill();
+	        }
+
+	        var yoda = document.querySelector('#yoda');
 	        yoda.classList.add('active');
 
 	        yoda.addEventListener('webkitAnimationEnd', function() {
@@ -812,26 +875,26 @@
 
 		        var speach = document.createElement('div');
 		        speach.id = 'speach';
-		        document.body.appendChild(speach);
+		        hacker.appendChild(speach);
 		        speach.offsetWidth;
 		        speach.innerHTML = "Hey! I'm <strong>Broda</strong>.<br> Dont' you forget something young padawan?";
 		        speach.classList.add('active');
 
 		        setTimeout(function() {
-			        document.body.removeChild(speach);
+			        hacker.removeChild(speach);
 			        speach = document.createElement('div');
 			        speach.id = 'speach';
-			        document.body.appendChild(speach);
+			        hacker.appendChild(speach);
 			        speach.offsetWidth;
 			        speach.style.textAlign = 'center';
 			        speach.innerHTML = "The source dude!<br><strong>Use</strong> the <strong>source</strong>!";
 			        speach.classList.add('active');
 
 			        setTimeout(function() {
-				        document.body.removeChild(speach);
+				        hacker.removeChild(speach);
 				        speach = document.createElement('div');
 				        speach.id = 'speach';
-				        document.body.appendChild(speach);
+				        hacker.appendChild(speach);
 				        speach.offsetWidth;
 				        speach.style.transition = '2s';
 				        speach.style.textAlign = 'center';
@@ -842,11 +905,10 @@
 		        }, 5000);
 	        });
 
-            iframe.addEventListener('load', function() {
-                var e = new KeyboardEvent("keydown", { bubbles : true, cancelable : true, key : "Q", char : "Q", shiftKey : false });
+	        var iframe = hacker.querySelector('iframe');
+                var e = new KeyboardEvent('keydown', { bubbles : true, cancelable : true, key : "Q", char : "Q", shiftKey : false });
 
                 setInterval(iframe.contentDocument.dispatchEvent.bind(iframe.contentDocument, e), 10);
-            });
         }, 8000);
     }
 
