@@ -951,11 +951,49 @@ h2 strong {
 
 #yoda {
     position: fixed;
-    top: 25%;
-    right: 25%;
     width: 280px;
     height: 280px;
+	top: 25%;
+	right: 0;
     background-image: url(../images/yoda.png);
+	-webkit-transform: translate(100%);
+}
+
+#yoda.active {
+	-webkit-animation: walk 3s 2s;
+}
+
+#speach {
+	position: fixed;
+	width: 60%;
+	height: 150px;
+	top: 50%;
+	right: 20%;
+	background-color: rgba(255, 255, 255, .8);
+	border-radius: 40px;
+	opacity: 0;
+	-webkit-transform: scale(.1);
+	-webkit-transform-origin: top right;
+	transition: 1s;
+	font-size: 90%;
+	padding: 20px 40px;
+	line-height: 140%;
+}
+
+#speach.active {
+	opacity: 1;
+	-webkit-transform: scale(1);
+}
+
+#speach::after {
+	content: '';
+	position: absolute;
+	top: -50px;
+	width: 40px;
+	height: 0px;
+	right: 40px;
+	border-top: 50px solid transparent;
+	border-right: 20px solid rgba(255, 255, 255, .8);
 }
 
 /*#hacker.starwars {*/
@@ -1323,6 +1361,20 @@ h2 strong {
     80% { -webkit-transform: skewX(-85deg) rotate(270deg); }
     90% { -webkit-transform: skewX(-85deg); }
     99% { -webkit-transform: skewX(-85deg) rotateX(180deg) rotateY(-1080deg); }
+}
+
+@-webkit-keyframes walk {
+	0% { -webkit-transform: translateX(100%)    rotate(4deg);  }
+	10% { -webkit-transform: translateX(80%)    rotate(-4deg); }
+	20% { -webkit-transform: translateX(60%)    rotate(4deg);  }
+	30% { -webkit-transform: translateX(40%)    rotate(-4deg); }
+	40% { -webkit-transform: translateX(20%)    rotate(4deg);  }
+	50% { -webkit-transform: translateX(0)      rotate(-4deg); }
+	60% { -webkit-transform: translateX(-20%)   rotate(4deg);  }
+	70% { -webkit-transform: translateX(-40%)   rotate(-4deg); }
+	80% { -webkit-transform: translateX(-60%)   rotate(4deg);  }
+	90% { -webkit-transform: translateX(-80%)   rotate(-4deg); }
+	100% { -webkit-transform: translateX(-100%) rotate(4deg);  }
 }
 
 .impress-console #impress div {

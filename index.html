@@ -479,6 +479,10 @@
         <!--</q>-->
     </div>
 
+    <div id="ribs-features" class="step">
+
+    </div>
+
     <div id="ribs-performances" class="step">
         <q>
             Hautes performances
@@ -797,20 +801,51 @@
             iframe.height = '100%';
             document.body.appendChild(iframe);
 
+	        var yoda = document.createElement('div');
+	        yoda.id = 'yoda';
+	        document.body.appendChild(yoda);
+	        yoda.offsetWidth;
+	        yoda.classList.add('active');
+
+	        yoda.addEventListener('webkitAnimationEnd', function() {
+		        this.style.webkitTransform = 'translate(-100%)';
+
+		        var speach = document.createElement('div');
+		        speach.id = 'speach';
+		        document.body.appendChild(speach);
+		        speach.offsetWidth;
+		        speach.innerHTML = "Hey! I'm <strong>Broda</strong>.<br> Dont' you forget something young padawan?";
+		        speach.classList.add('active');
+
+		        setTimeout(function() {
+			        document.body.removeChild(speach);
+			        speach = document.createElement('div');
+			        speach.id = 'speach';
+			        document.body.appendChild(speach);
+			        speach.offsetWidth;
+			        speach.style.textAlign = 'center';
+			        speach.innerHTML = "The source dude!<br><strong>Use</strong> the <strong>source</strong>!";
+			        speach.classList.add('active');
+
+			        setTimeout(function() {
+				        document.body.removeChild(speach);
+				        speach = document.createElement('div');
+				        speach.id = 'speach';
+				        document.body.appendChild(speach);
+				        speach.offsetWidth;
+				        speach.style.transition = '2s';
+				        speach.style.textAlign = 'center';
+				        speach.style.lineHeight = '280%';
+				        speach.innerHTML = "A long time ago...";
+				        speach.classList.add('active');
+			        }, 5000);
+		        }, 5000);
+	        });
+
             iframe.addEventListener('load', function() {
                 var e = new KeyboardEvent("keydown", { bubbles : true, cancelable : true, key : "Q", char : "Q", shiftKey : false });
 
-                var i = 0;
-
-                setInterval(function() {
-                    iframe.contentDocument.dispatchEvent(e);
-                    if (50 == i) {
-                        var yoda = document.createElement('div');
-                        yoda.id = 'yoda';
-                        document.body.appendChild(yoda);
-                    }
-                    i++;
-                }, 10);
+                setInterval(iframe.contentDocument.dispatchEvent.bind(iframe.contentDocument, e), 10);
             });
         }, 8000);
     }
