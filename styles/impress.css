@@ -63,6 +63,11 @@ body {
     color: rgb(44, 44, 44);
 }
 
+.dark body {
+    color: #fff;
+    background: radial-gradient(#222, #000)
+}
+
 /*
     Now let's bring some text styles back ...
 */
@@ -174,8 +179,16 @@ h2 strong {
     transition: .5s 1s;
 }
 
+.dark h2 strong {
+    color: #fff;
+}
+
 .active h2 strong {
     color: #cc3300;
+}
+
+.dark .active h2 strong {
+    color: #ff44c0;
 }
 
 /*
@@ -383,6 +396,10 @@ h2 strong {
     -webkit-animation-delay: 6s;
     -webkit-animation-iteration-count: infinite;
     -webkit-animation-timing-function: linear;
+}
+
+.inline-heart {
+    letter-spacing: -8px;
 }
 
 /*
@@ -951,6 +968,7 @@ h2 strong {
 	height: 100%;
     transition: 3s linear 18s;
 	background: #000;
+    color: rgb(44, 44, 44);
 }
 
 #hacker.active {
@@ -1013,7 +1031,12 @@ h2 strong {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-color: #000;
+    transition: 6s linear 70s;
+    background-color: #000;
+}
+
+#space.active {
+    opacity: 0;
 }
 
 #titles {
@@ -1038,11 +1061,44 @@ h2 strong {
 	font-weight: bold;
 	font-size: 60px;
 	word-spacing: 5px;
-	-webkit-animation: scroll 100s linear infinite 20s;
+	-webkit-animation: scroll 140s linear infinite 20s;
 }
 
 #titles-content p {
 	margin-top: 50px;
+}
+
+#firefox,
+#ie {
+    position: absolute;
+    top: 20%;
+    left: 0;
+    width: 128px;
+    height: 128px;
+    transition: 10s 60s;
+    transition-timing-function: linear;
+}
+
+#firefox {
+    background-image: url(../images/firefox.png);
+    -webkit-transform: translateX(-628px);
+}
+
+#firefox.active {
+    -webkit-transform: translateX(2000px);
+}
+
+#ie {
+    background-image: url(../images/ie.png);
+    -webkit-transform: translateX(-128px);
+}
+
+#ie.active {
+    -webkit-transform: translateX(2500px);
+}
+
+#firefox.active {
+
 }
 
 /*#hacker.starwars {*/

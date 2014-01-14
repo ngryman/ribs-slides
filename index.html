@@ -580,8 +580,10 @@
         </q>
     </div>
 
-	<div id="open-source">
-		<!--about:mozilla-->
+	<div id="open-source" class="step title">
+        <q>
+            <h2><strong>Open</strong> source <strong class="inline-heart"><3</strong></h2>
+        </q>
 	</div>
 </div>
 
@@ -593,17 +595,17 @@
 			<p>The evil empire Microsoft © is dominating the browser market.
 				With the help of their massive destruction weapon, Internet Explorer, they are now the masters of the Web.
 			</p>
-			<p>People are now subjects to bugs, slowness and precarious technology.
+			<p>People are now subjects to bugs, extreme slowness and precarious technology.
 			</p>
 			<p>This is the dark age of the Web...
 			</p>
-			<p>Fortunately a group of rebels have used their best strategy to prevent The Empire to dominate.
+			<p>Fortunately a group of rebels have used their best strategy to prevent a rughtless domination of The Empire.
 				They have released the source code of their browser, Netscape.
 			</p>
 			<p>Using the collaboration of many resistant, they have now developed the most powerful weapon against
 				tyranny, Firefox.
 			</p>
-			<p>This terribly successful strategy was called Open Source.
+			<p>This terribly successful strategy is called Open Source.
 			</p>
 			<p>The Open Source now rules the Web, and The Empire is now far less powerful. It is even doing Open Source
 				itself in order to survive this new order.
@@ -611,6 +613,8 @@
 			<p>This is now the golden age of the Web.</p>
 		</div>
 	</div>
+    <div id="firefox"></div>
+    <div id="ie"></div>
 </div>
 <div id="hacker">
 	<iframe src="http://hackertyper.com/" frameborder="0" width="100%" height="100%"></iframe>
@@ -836,7 +840,8 @@
     function fakeEndEnter(el) {
         setTimeout(function() {
             el.querySelector('h2').style.display = 'none';
-            document.body.style.background = 'radial-gradient(#333, #111)';
+
+            document.documentElement.classList.add('dark');
 
 	        var space = document.querySelector('#space');
 	        space.style.display = 'block';
@@ -877,7 +882,7 @@
 		        speach.id = 'speach';
 		        hacker.appendChild(speach);
 		        speach.offsetWidth;
-		        speach.innerHTML = "Hey! I'm <strong>Broda</strong>.<br> Dont' you forget something young padawan?";
+		        speach.innerHTML = "Hey! I'm <strong>Broda</strong>.<br> Don't you forget something young padawan?";
 		        speach.classList.add('active');
 
 		        setTimeout(function() {
@@ -901,14 +906,36 @@
 				        speach.style.lineHeight = '280%';
 				        speach.innerHTML = "A long time ago...";
 				        speach.classList.add('active');
+
+                        // activate ships
+                        space.querySelector('#firefox').classList.add('active');
+                        space.querySelector('#ie').classList.add('active');
+
+                        space.classList.add('active');
+                        space.addEventListener('transitionend', function(e) {
+                            if (space !== e.target) return;
+
+                            // clean up
+                            document.body.removeChild(hacker);
+                            document.body.removeChild(space);
+
+                            // next slide
+                            impress().next();
+                        });
 			        }, 5000);
 		        }, 5000);
 	        });
 
-	        var iframe = hacker.querySelector('iframe');
-                var e = new KeyboardEvent('keydown', { bubbles : true, cancelable : true, key : "Q", char : "Q", shiftKey : false });
+            hacker.addEventListener('webkitTransitionEnd', function(e) {
+                if (hacker !== e.target || 'opacity' != e.propertyName) return;
 
-                setInterval(iframe.contentDocument.dispatchEvent.bind(iframe.contentDocument, e), 10);
+                clearInterval(intervalId);
+            });
+
+	        var iframe = hacker.querySelector('iframe');
+            var e = new KeyboardEvent('keydown', { bubbles : true, cancelable : true, key : "Q", char : "Q", shiftKey : false });
+
+            intervalId = setInterval(iframe.contentDocument.dispatchEvent.bind(iframe.contentDocument, e), 10);
         }, 8000);
     }
 
