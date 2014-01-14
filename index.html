@@ -585,6 +585,27 @@
             <h2><strong>Open</strong> source <strong class="inline-heart"><3</strong></h2>
         </q>
 	</div>
+
+    <div id="open-projects" class="step wide center">
+        <img src="images/open-source/angular.png">
+        <img src="images/open-source/apache.png">
+        <img src="images/open-source/bower.png">
+        <img src="images/open-source/brackets.png">
+        <img src="images/open-source/chrome.png">
+        <img src="images/open-source/compass.png">
+        <img src="images/open-source/cordova.png">
+        <img src="images/open-source/firefox.png">
+        <img src="images/open-source/grunt.png">
+        <img src="images/open-source/handlebars.jpg">
+        <img src="images/open-source/jquery.png">
+        <img src="images/open-source/linux.png">
+        <img src="images/open-source/lo.png">
+        <img src="images/open-source/mongo.png">
+        <img src="images/open-source/node.png">
+        <img src="images/open-source/sass.jpg">
+        <img src="images/open-source/sublime.png">
+        <img src="images/open-source/yo.png">
+    </div>
 </div>
 
 <div id="space">
@@ -937,6 +958,25 @@
 
             intervalId = setInterval(iframe.contentDocument.dispatchEvent.bind(iframe.contentDocument, e), 10);
         }, 8000);
+    }
+
+    //// DEBUG
+    function openSourceEnter() {
+        document.documentElement.classList.add('dark');
+    }
+
+    function openProjectsEnter(el) {
+        !function rotateRandom() {
+            var index = Math.ceil(Math.random() * 18);
+            var logo = el.querySelector('img:nth-child(' + index + ')');
+            logo.style.webkitAnimation = 'rotate 2s';
+
+            intervalId = setTimeout(rotateRandom, Math.random() * 2000 + 1000);
+        }();
+    }
+
+    function openProjectsLeave() {
+        clearTimeout(intervalId);
     }
 
 	function callHandler(type, e) {
