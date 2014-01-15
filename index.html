@@ -444,7 +444,7 @@
         </q>
     </div>
 
-    <div id="ribs" class="step title">
+    <div id="ribs" class="step title" data-z="-1000" data-rotate="1080">
         <q>
             <h2><strong><span>R</span><span>I</span><span>B</span><span>S</span></strong></h2>
         </q>
@@ -466,22 +466,24 @@
             </div>
         </div>
         <strong>ribs</strong>
-        <!--<q>-->
+
+        <div class="notes">
+            <!--<q>-->
             <!--Sass + CDN-->
             <!--- Service de processing d'image, payable à l'image.-->
-              <!--- On paye se qu'on consomme-->
-              <!--- Pas de barrières, de BFR-->
+            <!--- On paye se qu'on consomme-->
+            <!--- Pas de barrières, de BFR-->
             <!--- CDN-->
-              <!--- On paye encore moins car Cloudflare -> gratuit-->
-              <!--- Rapide-->
-              <!--- Géo-localisé-->
+            <!--- On paye encore moins car Cloudflare -> gratuit-->
+            <!--- Rapide-->
+            <!--- Géo-localisé-->
             <!--- Détection client-->
             <!--- Console de gestion-->
-        <!--</q>-->
+            <!--</q>-->
+        </div>
     </div>
 
     <div id="ribs-features" class="step">
-
     </div>
 
     <div id="ribs-performances" class="step">
@@ -558,16 +560,40 @@
         </div>
     </div>
 
-    <div id="ribs-advantages" class="step">
-        - prix
-        - performance, TTFB
-        - qualite
-        - scaling, pas de BFR
+    <div id="ribs-advantages" class="step title">
+        <q>
+            <h2>Prix</h2>
+            <h2>Qualite</h2>
+            <h2>Integration</h2>
+            <h2>Performance</h2>
+        </q>
+
+        <div class="notes">
+            Prix: responsive price, pas de BFR, scaling en douceur
+            Performance: TTFB, CDN reconnu.
+            Qualite: bon algorithme de resizing.
+
+        </div>
     </div>
 
-    <div id="ribs-advantages-scaling" class="step graphic-rect">
+    <div id="ribs-price" class="step title">
+        <q>
+            <h2><strong>Responsive</strong> price</h2>
+        </q>
+    </div>
+
+    <div id="ribs-price-model" class="step">
+
+    </div>
+
+    <div id="ribs-advantages-price" class="step graphic graphic-rect">
         <strong>Traffic</strong>
-        <strong>Images</strong>
+        <strong>Prix</strong>
+        <ul>
+            <li>Pack 1</li>
+            <li>Pack 2</li>
+            <li>Pack 3</li>
+        </ul>
     </div>
 
     <div id="ribs-business-model-canvas" class="step">
@@ -654,409 +680,7 @@
     impress().init();
     impressConsole().init('styles/impress-console.css');
 </script>
-<script>
-	var root = document.getElementById('impress'),
-		graphs = {},
-		intervalId;
-
-	function responsiveDevicesEnter(el) {
-		var duration = 6000, steps = 3, step = 1;
-
-		intervalId = setInterval(function() {
-			el.querySelector('.animation').setAttribute('data-animation-step', step = ++step > steps ? 1 : step);
-		}, duration / steps);
-	}
-
-	function responsiveDevicesLeave() {
-		clearInterval(intervalId);
-	}
-
-	function performanceImagesEnter(el) {
-		var r = Raphael(el.id);
-
-		var pie = r.piechart(500, 450, 300, [46, 28, 2, 24], {
-			stroke: '#EEE',
-			strokewidth: 5,
-			colors: [
-				'#CC3300',
-				'#99583D',
-				'#CC9114',
-				'#CCC'
-			]
-		});
-
-		var legend = el.querySelectorAll('ul li');
-		legend[0].style.left = '50%';
-		legend[0].style.top = '5%';
-		legend[1].style.left = '85%';
-		legend[1].style.top = '75%';
-		legend[2].style.left = '15%';
-		legend[2].style.top = '75%';
-		legend[3].style.left = '3%';
-		legend[3].style.top = '47%';
-
-		setTimeout(function() {
-			pie[0][0].animate({
-				transform: 's1.1 1.1 ' + this.cx + ' ' + this.cy + ' t0 -20'
-			}, 1000, 'bounce');
-		}, 1000);
-	}
-
-    function imagesTriangleEnter(el) {
-//        var r = Raphael(el.id, 900, 900),
-//            p;
-<!---->
-//        p = r.path('M450,100 l445,600 l-890,0 l445,-600');
-//        p.attr('stroke-width', 5);
-//        p.attr('stroke-linecap', 'square');
-//        p.attr('stroke-linejoin', 'miter');
-
-        var legend = el.querySelectorAll('ul li');
-        legend[0].style.left = '51%';
-        legend[0].style.top = '3%';
-        legend[1].style.left = '96%';
-        legend[1].style.top = '85%';
-        legend[2].style.left = '5%';
-        legend[2].style.top = '85%';
-
-        var canvas = document.createElement('canvas'),
-            ctx = canvas.getContext('2d');
-
-        var p1x = 455, p1y = 100,
-            p2x = 890, p2y = 700,
-            p3x = 10,   p3y = 700;
-
-        canvas.width = 900;
-        canvas.height = 900;
-
-        ctx.webkitImageSmoothingEnabled = true;
-
-        var d = 0, incr = 0.005, step = 0;
-        intervalId = requestAnimationFrame(function frame() {
-            var m = [
-                { x: (p2x - p1x) * d + p1x, y: (p2y - p1y) * d + p1y },
-                { x: (p3x - p2x) * d + p2x, y: (p3y - p2y) * d + p2y },
-                { x: (p1x - p3x) * d + p3x, y: (p1y - p3y) * d + p3y }
-            ];
-
-            ctx.clearRect(0, 0, 900, 900);
-
-            ctx.fillStyle = 'rgba(204, 51, 0, 1)';
-            ctx.lineWidth = 2;
-
-            // moving area
-            ctx.beginPath();
-            ctx.moveTo(m[0].x, m[0].y);
-            ctx.lineTo(m[1].x, m[1].y);
-            ctx.lineTo(m[2].x, m[2].y);
-            ctx.closePath();
-            ctx.stroke();
-            ctx.fill();
-
-            // triangle
-            ctx.strokeStyle = '#000';
-            ctx.lineWidth = 10;
-            ctx.beginPath();
-            ctx.moveTo(p1x, p1y);
-            ctx.lineTo(p2x, p2y);
-            ctx.lineTo(p3x, p3y);
-            ctx.closePath();
-            ctx.stroke();
-
-            d += incr;
-            if (d > 1) {
-                d = 0;
-                step++;
-            }
-
-            intervalId = requestAnimationFrame(frame);
-        });
-
-        el.appendChild(canvas);
-    }
-
-    function imagesTriangleLeave() {
-        cancelAnimationFrame(intervalId);
-    }
-
-	function imagesGoalEnter(el) {
-		var graph = new ResolutionGraph(el, [ 320, 768, 1024, 1280 ]);
-
-		graph.click(function(rects, step) {
-			switch (step) {
-				case 1:
-					rects.forEach(function(r) {
-						r.animate({ opacity: 1 }, 1000);
-					});
-					break;
-
-				case 2:
-					rects.forEach(function(r) {
-						r.animate({ 'fill-opacity': 1 }, 1000);
-					});
-					break;
-
-				case 3:
-					rects[2].animate({ path: 'M768,1152 L1024,1152 L1024,896' }, 1000);
-					break;
-
-				case 4:
-					rects[3].animate({ opacity: 0 }, 1000);
-					rects[4].animate({ path: 'M1024,896 L1024,0 L1920,0' }, 1000);
-					break;
-			}
-		});
-
-		graphs['images'] = graph;
-	}
-
-	function imagesExampleFootprintEnter(el) {
-		var graph = graphs['images'],
-			footprint = graph.footprint(),
-			i = 0,
-			el = el.querySelector('strong');
-
-		var intervalId = setInterval(function() {
-			el.innerText = ++i;
-			if (footprint == i) clearInterval(intervalId);
-		}, 30);
-
-	}
-
-    function ribsPitchEnter(el) {
-        var duration = 6000, steps = 3, step = 1;
-
-        intervalId = setInterval(function() {
-            el.querySelector('.animation').setAttribute('data-animation-step', step = ++step > steps ? 1 : step);
-        }, duration / steps);
-    }
-
-    function ribsPitchLeave() {
-        clearInterval(intervalId);
-    }
-
-    function ribsAdvantagesScalingEnter(el) {
-        var p;
-
-        var r = Raphael(el.id, '100%', '100%');
-        r.setViewBox(-20, -20, 1980, 1140);
-        r.canvas.setAttribute('preserveAspectRatio', 'none');
-
-        // boxes
-        p = r.path('M0,0 l980,0 l0,550 l-980,0 l0,-550');
-        p.attr('fill', '#cc3300');
-        p = r.path('M980,0 l980,0 l0,550 l-980,0 l0,-550');
-        p.attr('fill', '#35D281');
-        p = r.path('M980,550 l980,0 l0,550 l-980,0 l0,-550');
-        p.attr('fill', '#cc3300');
-        p = r.path('M0,550 l980,0 l0,550 l-980,0 l0,-550');
-        p.attr('fill', '#35D281');
-
-        // axes
-        p = r.path('M0,0 l0,1100 l1980,0');
-        p.attr('stroke', '#444');
-        p.attr('stroke-width', 15);
-    }
-
-    function fakeEndEnter(el) {
-        setTimeout(function() {
-            el.querySelector('h2').style.display = 'none';
-
-            document.documentElement.classList.add('dark');
-
-	        var space = document.querySelector('#space');
-	        space.style.display = 'block';
-
-	        var hacker = document.querySelector('#hacker');
-	        hacker.style.display = 'block';
-	        hacker.offsetWidth;
-	        hacker.classList.add('active');
-
-	        var canvas = space.querySelector('canvas');
-	        canvas.width = window.innerWidth;
-	        canvas.height = window.innerHeight;
-
-	        var ctx = canvas.getContext('2d');
-	        var width = window.innerWidth;
-	        var height = window.innerHeight;
-
-	        ctx.fillStyle = 'rgb(255, 255, 255)';
-
-	        // stars
-	        for (var i = 0; i < 400; i++) {
-		        var x = Math.random() * width;
-		        var y = Math.random() * height;
-		        var r = Math.random() * 2;
-
-		        ctx.beginPath();
-		        ctx.arc(x, y, r, 0, 2 * Math.PI, false);
-		        ctx.fill();
-	        }
-
-	        var yoda = document.querySelector('#yoda');
-	        yoda.classList.add('active');
-
-	        yoda.addEventListener('webkitAnimationEnd', function() {
-		        this.style.webkitTransform = 'translate(-100%)';
-
-		        var speach = document.createElement('div');
-		        speach.id = 'speach';
-		        hacker.appendChild(speach);
-		        speach.offsetWidth;
-		        speach.innerHTML = "Hey! I'm <strong>Broda</strong>.<br> Don't you forget something young padawan?";
-		        speach.classList.add('active');
-
-		        setTimeout(function() {
-			        hacker.removeChild(speach);
-			        speach = document.createElement('div');
-			        speach.id = 'speach';
-			        hacker.appendChild(speach);
-			        speach.offsetWidth;
-			        speach.style.textAlign = 'center';
-			        speach.innerHTML = "The source dude!<br><strong>Use</strong> the <strong>source</strong>!";
-			        speach.classList.add('active');
-
-			        setTimeout(function() {
-				        hacker.removeChild(speach);
-				        speach = document.createElement('div');
-				        speach.id = 'speach';
-				        hacker.appendChild(speach);
-				        speach.offsetWidth;
-				        speach.style.transition = '2s';
-				        speach.style.textAlign = 'center';
-				        speach.style.lineHeight = '280%';
-				        speach.innerHTML = "A long time ago...";
-				        speach.classList.add('active');
-
-                        // activate ships
-                        space.querySelector('#firefox').classList.add('active');
-                        space.querySelector('#ie').classList.add('active');
-
-                        space.classList.add('active');
-                        space.addEventListener('transitionend', function(e) {
-                            if (space !== e.target) return;
-
-                            // clean up
-                            document.body.removeChild(hacker);
-                            document.body.removeChild(space);
-
-                            // next slide
-                            impress().next();
-                        });
-			        }, 5000);
-		        }, 5000);
-	        });
-
-            hacker.addEventListener('webkitTransitionEnd', function(e) {
-                if (hacker !== e.target || 'opacity' != e.propertyName) return;
-
-                clearInterval(intervalId);
-            });
-
-	        var iframe = hacker.querySelector('iframe');
-            var e = new KeyboardEvent('keydown', { bubbles : true, cancelable : true, key : "Q", char : "Q", shiftKey : false });
-
-            intervalId = setInterval(iframe.contentDocument.dispatchEvent.bind(iframe.contentDocument, e), 10);
-        }, 8000);
-    }
-
-    //// DEBUG
-    function openSourceEnter() {
-        document.documentElement.classList.add('dark');
-    }
-
-    function openProjectsEnter(el) {
-        !function rotateRandom() {
-            var index = Math.ceil(Math.random() * 18);
-            var logo = el.querySelector('img:nth-child(' + index + ')');
-            logo.style.webkitAnimation = 'rotate 2s';
-
-            intervalId = setTimeout(rotateRandom, Math.random() * 2000 + 1000);
-        }();
-    }
-
-    function openProjectsLeave() {
-        clearTimeout(intervalId);
-    }
-
-	function callHandler(type, e) {
-		// extract id & camelize
-		var id = e.target.id.replace(/-(\w)/g, function(match) {
-			return match[1].toUpperCase();
-		});
-
-		// call appropriate handler if it exists
-		var fn = window[id + type[0].toUpperCase() + type.slice(1)];
-		if ('undefined' != typeof fn) {
-			fn(e.target);
-		}
-	}
-
-	root.addEventListener('impress:stepenter', callHandler.bind(null, 'enter'));
-	root.addEventListener('impress:stepleave', callHandler.bind(null, 'leave'));
-
-	/**
-	 * Devices buttons
-	 */
-
-	var buttons = document.querySelectorAll('.embed button');
-	for (var i = 0; i < buttons.length; i++) {
-		buttons[i].addEventListener('click', function(e) {
-			var size = parseInt(e.target.innerText);
-			var container = e.target.parentNode.parentNode;
-			container.style.width = size + 'px';
-
-			var active = container.querySelector('.is-active');
-			if (active) active.classList.remove('is-active');
-			e.target.classList.add('is-active');
-		});
-	}
-</script>
+<script src="scripts/app.js"></script>
 
 </body>
 </html>
-
-<!--
-    
-    Now you know more or less everything you need to build your first impress.js presentation, but before
-    you start...
-    
-    Oh, you've already cloned the code from GitHub?
-    
-    You have it open in text editor?
-    
-    Stop right there!
-    
-    That's not how you create awesome presentations. This is only a code. Implementation of the idea that
-    first needs to grow in your mind.
-    
-    So if you want to build great presentation take a pencil and piece of paper. And turn off the computer.
-    
-    Sketch, draw and write. Brainstorm your ideas on a paper. Try to build a mind-map of what you'd like
-    to present. It will get you closer and closer to the layout you'll build later with impress.js.
-    
-    Get back to the code only when you have your presentation ready on a paper. It doesn't make sense to do
-    it earlier, because you'll only waste your time fighting with positioning of useless points.
-    
-    If you think I'm crazy, please put your hands on a book called "Presentation Zen". It's all about 
-    creating awesome and engaging presentations.
-    
-    Think about it. 'Cause impress.js may not help you, if you have nothing interesting to say.
-    
--->
-
-<!--
-    
-    Are you still reading this?
-    
-    For real?
-    
-    I'm impressed! Feel free to let me know that you got that far (I'm @bartaz on Twitter), 'cause I'd like
-    to congratulate you personally :)
-    
-    But you don't have to do it now. Take my advice and take some time off. Make yourself a cup of coffee, tea,
-    or anything you like to drink. And raise a glass for me ;)
-    
-    Cheers!
-    
--->

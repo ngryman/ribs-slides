@@ -65,7 +65,7 @@ body {
 
 .dark body {
     color: #fff;
-    background: radial-gradient(#444, #111)
+    background: radial-gradient(#222, #111)
 }
 
 /*
@@ -940,19 +940,65 @@ h2 strong {
     -webkit-animation-delay: 2.1s;
 }
 
-#ribs-advantages-scaling strong {
+#ribs-advantages h2 {
+    font-size: 200%;
+    line-height: 100%;
+    color: rgb(160, 160, 160);
+    -webkit-transform: rotateX(60deg);
+}
+
+#ribs-advantages h2:nth-child(2) {
+    letter-spacing: 8px;
+    color: rgb(120, 120, 120);
+}
+
+#ribs-advantages h2:nth-child(3) {
+    letter-spacing: 3px;
+    color: rgb(80, 80, 80);
+}
+
+#ribs-advantages h2:nth-child(4) {
+    letter-spacing: 12px;
+    color: inherit;
+}
+
+#ribs-advantages canvas {
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+}
+
+#ribs-advantages-price strong {
     position: absolute;
     -webkit-transform: translate(-50%, -50%);
 }
 
-#ribs-advantages-scaling strong:first-of-type {
+#ribs-advantages-price strong:first-of-type {
     left: 50%;
-    bottom: -20%;
+    top: 115%;
 }
 
-#ribs-advantages-scaling strong:last-of-type {
+#ribs-advantages-price strong:last-of-type {
     left: -13%;
     top: 50%;
+}
+
+#ribs-advantages-price li {
+    top: -10%;
+}
+
+#ribs-advantages-price li:nth-of-type(1) {
+    left: 15%;
+}
+
+#ribs-advantages-price li:nth-of-type(2) {
+    left: 46%;
+}
+
+#ribs-advantages-price li:nth-of-type(3) {
+    left: 82%;
 }
 
 #fake-end.active q h2 {
@@ -993,7 +1039,6 @@ h2 strong {
 
 #yoda {
     position: absolute;
-	z-index: ;
     width: 280px;
     height: 280px;
 	top: 25%;
