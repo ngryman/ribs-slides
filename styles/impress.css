@@ -674,6 +674,37 @@ h2 strong {
     Slides customization
 */
 
+#responsive strong {
+    display: inline-block;
+    transition: 1s;
+}
+
+#responsive span {
+    display: inline-block;
+    transition: 1s;
+}
+
+#responsive span:last-child {
+    position: absolute;
+    left: 50.3%;
+    opacity: 0;
+    -webkit-transform: translateY(50%);
+}
+
+#responsive.images strong {
+    -webkit-transform: translateX(-20%);
+}
+
+#responsive.images span {
+    opacity: 0;
+    -webkit-transform: translateY(-50%);
+}
+
+#responsive.images span:last-child {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+}
+
 #responsive-devices {
     text-align: center;
 }

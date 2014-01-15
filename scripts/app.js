@@ -1,6 +1,12 @@
 var graphs = {},
 	intervalId;
 
+function responsiveEnter(el) {
+	el.addEventListener('click', function() {
+		el.classList.add('images');
+	});
+}
+
 function responsiveDevicesEnter(el) {
 	var duration = 6000, steps = 3, step = 1;
 
