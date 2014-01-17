@@ -65,6 +65,69 @@
     -webkit-transform: translate(-35%, -10%) rotate(-20deg);
 }
 
+#performance-hidpi > div {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.pixels {
+    width: 400px;
+    height: 400px;
+    font-size: 0;
+}
+
+.pixels div {
+    display: inline-block;
+    padding: 5px;
+    width: 50%;
+    height: 50%;
+    background-color: #cc3300;
+    background-clip: content-box;
+    -webkit-box-sizing: border-box;
+}
+
+.active .pixels > div {
+    -webkit-animation: blink 8s infinite;
+}
+
+.active .pixels > div:nth-child(1) {
+    -webkit-animation-delay: 2s;
+}
+
+.active .pixels > div:nth-child(2) {
+    -webkit-animation-delay: 4s;
+}
+
+.active .pixels > div:nth-child(3) {
+    -webkit-animation-delay: 6s;
+}
+
+.active .pixels > div:nth-child(4) {
+    -webkit-animation-delay: 8s;
+}
+
+.pixels-2 div {
+    padding: 0;
+    background-color: transparent;
+}
+
+.pixels-2 div div {
+    padding: 5px;
+    width: 50%;
+    height: 50%;
+    background-color: #cc3300;
+}
+
+.multiplier {
+    margin: 60px;
+    width: 120px;
+    height: 120px;
+    background-color: #cc3300;
+    border-radius: 50%;
+    color: #fff;
+    line-height: 200%;
+}
+
 #images-responsive q {
     display: inline-block;
     -webkit-transform-origin: 30% bottom;
@@ -163,7 +226,7 @@
     top: 50%;
     border-top: 3px dashed #333;
     width: 60%;
-    transition: 2s 2s;
+    transition: 2s 4s;
 }
 
 #ribs-pitch.active::before {
@@ -173,13 +236,14 @@
 #ribs-pitch > * {
     opacity: 0;
     vertical-align: middle;
+    transition: 2s 2s;
 }
 
 #ribs-pitch strong {
     position: absolute;
     top: 70%;
     left: 35%;
-    transition: 2s 1s;
+    transition-delay: 3s;
 }
 
 #ribs-pitch.active strong {
@@ -187,9 +251,13 @@
 }
 
 #ribs-pitch .lena {
-    opacity: 1;
     width: 150px;
     height: auto;
+    transition-delay: 2s;
+}
+
+#ribs-pitch.active .lena {
+    opacity: 1;
 }
 
 #ribs-pitch .cloud {
@@ -200,12 +268,12 @@
 
 #ribs-pitch.active .cloud {
     opacity: 1;
-    transition: 2s .5s;
+    transition-delay: 2.5s;
 }
 
 #ribs-pitch .animation {
     margin-left: 20px;
-    transition: 2s 1.5s;
+    transition-delay: 3.5s;
 }
 #ribs-pitch.active .animation {
     opacity: 1;
@@ -451,34 +519,34 @@
     -webkit-transform: translate(-50%, -50%);
 }
 
-#ribs-advantages-price strong {
+.advantages strong {
     position: absolute;
     -webkit-transform: translate(-50%, -50%);
 }
 
-#ribs-advantages-price strong:first-of-type {
+.advantages strong:first-of-type {
     left: 50%;
     top: 115%;
 }
 
-#ribs-advantages-price strong:last-of-type {
+.advantages strong:last-of-type {
     left: -13%;
     top: 50%;
 }
 
-#ribs-advantages-price li {
+.advantages li {
     top: -10%;
 }
 
-#ribs-advantages-price li:nth-of-type(1) {
+.advantages li:nth-of-type(1) {
     left: 15%;
 }
 
-#ribs-advantages-price li:nth-of-type(2) {
+.advantages li:nth-of-type(2) {
     left: 46%;
 }
 
-#ribs-advantages-price li:nth-of-type(3) {
+.advantages li:nth-of-type(3) {
     left: 82%;
 }
 
@@ -644,4 +712,9 @@
 
 @-webkit-keyframes orbit {
     100% { -webkit-transform: rotate(360deg); }
+}
+
+@-webkit-keyframes blink {
+    12.5% { opacity: .2; -webkit-transform: scale(.8); }
+    25%   { opacity: 1;  -webkit-transform: scale(1); }
 }
