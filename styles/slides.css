@@ -489,6 +489,11 @@
     -webkit-animation-delay: 2.1s;
 }
 
+#ribs-competitors.active img:nth-child(8) {
+    transition-delay: 2.3s;
+    -webkit-animation-delay: 2.3s;
+}
+
 #ribs-advantages h2 {
     font-size: 200%;
     line-height: 100%;
