@@ -20,6 +20,33 @@
 		clearInterval(intervalId);
 	}
 
+	exports.imagesComparisonHnicEnter = function(el) {
+		setTimeout(function() {
+			var t = el.querySelector('template');
+			var container = t.parentNode;
+			var clone = document.importNode(t.content, true);
+			container.appendChild(clone);
+		}, 500);
+	}
+
+	exports.imagesComparisonAmcEnter = function(el) {
+		setTimeout(function() {
+			var t = el.querySelector('template');
+			var container = t.parentNode;
+			var clone = document.importNode(t.content, true);
+			container.appendChild(clone);
+		}, 500);
+	}
+
+	exports.imagesComparisonPurpleEnter = function(el) {
+		setTimeout(function() {
+			var t = el.querySelector('template');
+			var container = t.parentNode;
+			var clone = document.importNode(t.content, true);
+			container.appendChild(clone);
+		}, 500);
+	}
+
 	exports.performanceImagesEnter = function(el) {
 		var r = Raphael(el.id);
 
