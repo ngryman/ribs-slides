@@ -152,6 +152,65 @@
     transition: 1s 2s;
 }
 
+#images-cost-description strong {
+    float: left;
+    margin-left: 100px;
+    margin-right: 50px;
+    border-right: 10px solid #ccc;
+    padding-right: 100px;
+    height: 630px;
+    line-height: 630px;
+    font-size: 400%;
+    font-weight: normal;
+    color: #ccc;
+    text-shadow: 0 0 150px #fff;
+}
+
+#images-cost-description div {
+    display: inline-block;
+    width: 50%;
+    line-height: 200%;
+    font-family: inherit;
+    white-space: nowrap;
+    transition: 1s;
+    opacity: 0;
+    -webkit-transform: translateX(-20%);
+}
+
+#images-cost-description div::before {
+    display: inline-block;
+    vertical-align: middle;
+    width: 1.4em;
+    font-family: icomoon;
+    font-size: 1.2em;
+    color: #555;
+}
+
+#images-cost-description.active div {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+}
+
+#images-cost-description.active div:nth-of-type(1) {
+    transition-delay: 1s;
+}
+
+#images-cost-description.active div:nth-of-type(2) {
+    transition-delay: 1.3s;
+}
+
+#images-cost-description.active div:nth-of-type(3) {
+    transition-delay: 1.6s;
+}
+
+#images-cost-description.active div:nth-of-type(4) {
+    transition-delay: 1.9s;
+}
+
+#images-cost-description.active div:nth-of-type(5) {
+    transition-delay: 2.2s;
+}
+
 #ribs h2 {
     transition: 4s 2s;
 }
@@ -279,16 +338,16 @@
     opacity: 1;
 }
 
-#ribs-pitch .animation .device .display div  {
+.animation-lena .device .display div  {
     background: #000;
 }
 
-#ribs-pitch .animation .device .display div div {
+.animation-lena .device .display div div {
     top: 0;
     height: 100%;
 }
 
-#ribs-pitch .animation .device .display div div img {
+.animation-lena .device .display div div img {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -297,11 +356,11 @@
     -webkit-transform: translate(-50%, -50%);
 }
 
-#ribs-pitch .animation .device .display .slide2 div {
+.animation-lena .device .display .slide2 div {
     top: 14px;
 }
 
-#ribs-pitch .animation .device .display .slide2 img {
+.animation-lena .device .display .slide2 img {
     width: auto;
     height: 100%;
 }
@@ -494,65 +553,99 @@
     -webkit-animation-delay: 2.3s;
 }
 
-#ribs-advantages h2 {
+/*#ribs-price-model {*/
+    /*height: 600px;*/
+/*}*/
+
+/*#ribs-price-model > * {*/
+    /*position: absolute;*/
+    /*-webkit-transform: translate(-50%, -50%);*/
+/*}*/
+
+/*#ribs-price-model .ribs {*/
+    /*width: 300px;*/
+    /*height: 300px;*/
+    /*background: red;*/
+/*}*/
+
+/*#ribs-price-model .lena {*/
+    /*width: 150px;*/
+    /*height: 150px;*/
+    /*top: 50%;*/
+    /*left: 0;*/
+/*}*/
+
+/*#ribs-price-model [data-animation-step='1'] {*/
+    /*width: 400px;*/
+    /*height: 328px;*/
+    /*top: 0;*/
+    /*left: 50%;*/
+/*}*/
+
+/*#ribs-price-model [data-animation-step='2'] {*/
+    /*top: 50%;*/
+    /*left: 50%;*/
+/*}*/
+
+/*#ribs-price-model [data-animation-step='3'] {*/
+    /*top: 100%;*/
+    /*left: 50%;*/
+/*}*/
+
+/*#ribs-price-model .animation-lena .device .display div  {*/
+    /*background: #000;*/
+/*}*/
+
+/*#ribs-price-model .animation-lena .device .display div div {*/
+    /*top: 0;*/
+    /*height: 100%;*/
+/*}*/
+
+/*#ribs-price-model .animation-lena .device .display div div img {*/
+    /*position: absolute;*/
+    /*top: 50%;*/
+    /*left: 50%;*/
+    /*width: 100%;*/
+    /*height: auto;*/
+    /*-webkit-transform: translate(-50%, -50%);*/
+/*}*/
+
+/*#ribs-price-model .animation-lena .device .display .slide2 div {*/
+    /*top: 14px;*/
+/*}*/
+
+/*#ribs-price-model .animation-lena .device .display .slide2 img {*/
+    /*width: auto;*/
+    /*height: 100%;*/
+/*}*/
+
+/*#ribs-price-model .animation {*/
+    /*width: 300px;*/
+    /*height: 246px;*/
+/*}*/
+
+#ribs-price-model sup {
+    font-size: 50%;
+    vertical-align: super;
+}
+
+#ribs-price-model strong {
     font-size: 200%;
-    line-height: 100%;
-    color: rgb(160, 160, 160);
-    -webkit-transform: rotateX(60deg);
 }
 
-#ribs-advantages h2:nth-child(2) {
-    letter-spacing: 8px;
-    color: rgb(120, 120, 120);
+#ribs-price-model strong:nth-of-type(2) {
+    margin: 30px;
 }
 
-#ribs-advantages h2:nth-child(3) {
-    letter-spacing: 3px;
-    color: rgb(80, 80, 80);
+#ribs-price-model span {
+    font-size: 200%;
+    color: #ccc;
 }
 
-#ribs-advantages h2:nth-child(4) {
-    letter-spacing: 12px;
-    color: inherit;
-}
-
-#ribs-advantages canvas {
-    position: absolute;
-    z-index: -1;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-}
-
-.advantages strong {
-    position: absolute;
-    -webkit-transform: translate(-50%, -50%);
-}
-
-.advantages strong:first-of-type {
-    left: 50%;
-    top: 115%;
-}
-
-.advantages strong:last-of-type {
-    left: -13%;
-    top: 50%;
-}
-
-.advantages li {
-    top: -10%;
-}
-
-.advantages li:nth-of-type(1) {
-    left: 15%;
-}
-
-.advantages li:nth-of-type(2) {
-    left: 46%;
-}
-
-.advantages li:nth-of-type(3) {
-    left: 82%;
+#ribs-price-model i {
+    vertical-align: super;
+    color: #999;
+    font-size: 120%;
 }
 
 .pipeline {
