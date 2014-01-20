@@ -458,7 +458,7 @@
 	}
 
 //// DEBUG
-	exports.ribsH5bpEnter = function() {
+	exports.githubTrendsEnter = function() {
 		document.documentElement.classList.add('dark');
 	}
 
@@ -473,6 +473,21 @@
 	}
 
 	exports.openProjectsLeave = function() {
+		clearTimeout(intervalId);
+	}
+
+	exports.githubCommunitiesEnter = function(el) {
+		!function rotateRandom() {
+			var index1 = Math.ceil(Math.random() * 5);
+			var index2 = Math.ceil(Math.random() * 6);
+			var logo = el.querySelector('.community:nth-child(' + index1 + ') img:nth-child(' + index2 + ')');
+			logo.style.webkitAnimation = 'wriggle 10s';
+
+			intervalId = setTimeout(rotateRandom, Math.random() * 1000);
+		}();
+	}
+
+	exports.githubCommunitiesLeave = function() {
 		clearTimeout(intervalId);
 	}
 

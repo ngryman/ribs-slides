@@ -743,6 +743,82 @@
 
 #github-trends {}
 
+#github-communities {
+	height: 600px;
+}
+
+.community {
+	position: absolute;
+	background-color: rgba(255, 255, 255, .9);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 50%;
+	border: 10px solid #111;
+	border-radius: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	text-align: center;
+	font-size: 0;
+}
+
+.community.npm {
+	top: 50%;
+	left: 50%;
+	width: 500px;
+	height: 500px;
+	background-image: url(../images/npm.png);
+	border-color: #CB3837;
+}
+
+.community.ruby {
+	top: 5%;
+	left: 5%;
+	width: 300px;
+	height: 300px;
+	background-image: url(../images/ruby.png);
+	background-size: 30%;
+	border-color: #BC0F00;
+	border-width: 6px;
+}
+
+.community.python {
+	top: 5%;
+	left: 95%;
+	width: 250px;
+	height: 250px;
+	background-image: url(../images/python.png);
+	background-size: 30%;
+	border-color: #306998;
+	border-width: 5px;
+}
+
+.community.maven {
+	top: 95%;
+	left: 95%;
+	width: 400px;
+	height: 400px;
+	background-image: url(../images/maven.png);
+	border-color: #FF6804;
+	border-width: 8px;
+}
+
+.community.nuget {
+	top: 95%;
+	left: 5%;
+	width: 200px;
+	height: 200px;
+	background-image: url(../images/nuget.png);
+	border-color: #0E89D8;
+	border-width: 4px;
+}
+
+.community img {
+	position: relative;
+	width: 33%;
+}
+
+.community img:nth-child(2) { top: -15%; }
+.community img:nth-child(5) { top: 15%; }
+
 #ribs-h5bp h2 span {
 	color: #e08524;
 }

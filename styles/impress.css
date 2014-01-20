@@ -344,7 +344,7 @@ h2 strong {
 }
 
 .notes {
-    display: none;
+    display: none !important;
 }
 
 .rating {
