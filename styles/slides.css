@@ -264,7 +264,7 @@
 }
 
 #ribs span:nth-of-type(3)::after {
-    content: 'acked';
+    content: 'aked';
     transition-delay: 4s;
 }
 
