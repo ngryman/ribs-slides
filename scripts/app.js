@@ -458,9 +458,28 @@
 	}
 
 //// DEBUG
-	exports.githubTrendsEnter = function() {
+	exports.newAdvantagesCommunicationEnter = function(el) {
 		document.documentElement.classList.add('dark');
-	}
+
+		setTimeout(Speach.create.bind(null, el), 2000);
+		document.addEventListener('keyup', keyHandler);
+
+		function keyHandler(e) {
+			if (107 == e.keyCode) {
+				Speach.create(el);
+			}
+			else if (109 == e.keyCode) {
+				Speach.remove();
+			}
+		}
+
+		Speach.keyHandler = keyHandler;
+	};
+
+	exports.newAdvantagesCommunicationLeave = function() {
+		document.removeEventListener('keyup', Speach.keyHandler);
+		Speach.cleanup();
+	};
 
 	exports.openProjectsEnter = function(el) {
 		!function rotateRandom() {
@@ -507,4 +526,76 @@
 			e.target.classList.add('is-active');
 		});
 	}
+
+
+	/**
+	 * Speach class
+	 */
+
+	function Speach(container) {
+		var speachEl = document.createElement('div');
+		speachEl.classList.add('speach');
+		speachEl.innerText = "ribs";
+
+		container.appendChild(speachEl);
+
+		this.el = speachEl;
+		this.pos = {
+			x: 0,
+			y: 0
+		};
+	}
+
+	Speach.prototype.run = function() {
+		this.getPos();
+
+		this.el.style.left = 50 + (this.pos.x * 190) + (1 == this.pos.y % 2 ? 95 : 0) + 'px';
+		this.el.style.top = 40 + this.pos.y * 200 + 'px';
+		this.el.classList.add('active');
+
+		this.timeoutId = setTimeout(this.run.bind(this), Math.random() * 4000 + 1000);
+	};
+
+	Speach.prototype.getPos = function() {
+		var x = Math.ceil(Math.random() * 5);
+		var y = Math.floor(Math.random() * 4);
+
+		if (Speach.rnds[x + '@' + y]) {
+			this.getPos();
+		}
+		else {
+			Speach.rnds[this.pos.x + '@' + this.pos.y] = false;
+			this.pos.x = x;
+			this.pos.y = y;
+			Speach.rnds[x + '@' + y] = true;
+		}
+	};
+
+	Speach.prototype.destroy = function() {
+		clearTimeout(this.timeoutId);
+		Speach.rnds[this.pos.x + '@' + this.pos.y] = false;
+		this.el.parentNode.removeChild(this.el);
+	};
+
+	Speach.create = function(container) {
+		var s = new Speach(container);
+		s.run();
+		Speach.speaches.push(s);
+	};
+
+	Speach.cleanup = function() {
+		while (Speach.speaches.length > 0) {
+			var s = Speach.speaches.shift();
+			if (s) s.destroy();
+		}
+		console.log(Speach.rnds);
+	};
+
+	Speach.remove = function() {
+		var s = Speach.speaches.shift();
+		if (s) s.destroy();
+	}
+
+	Speach.rnds = {};
+	Speach.speaches = [];
 }(window);
