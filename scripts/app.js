@@ -355,6 +355,15 @@
 		});
 	}
 
+	exports.ribsFirstEndEnter = function(el) {
+		setTimeout(function() {
+			var t = el.querySelector('template');
+			var container = t.parentNode;
+			var clone = document.importNode(t.content, true);
+			container.appendChild(clone);
+		}, 500);
+	};
+
 	exports.fakeEndEnter = function(el) {
 		setTimeout(function() {
 			el.querySelector('h2').style.display = 'none';
