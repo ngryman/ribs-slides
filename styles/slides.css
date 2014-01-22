@@ -931,6 +931,7 @@
 #new-advantages-product {
     height: 700px;
 }
+
 #new-advantages-product strong {
     position: absolute;
     z-index: 1;
@@ -941,6 +942,21 @@
     font-weight: bold;
     color: #333;
     text-shadow: 0 0 1px #333, 0 0 120px #fff;
+}
+
+#new-advantages-product img {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%) scale(3);
+    opacity: 0;
+    transition: .3s linear;
+}
+
+#new-advantages-product img.active {
+    opacity: 1;
+    -webkit-transform: translate(-50%, -50%) scale(.7);
 }
 
 #new-advantages-product > div {

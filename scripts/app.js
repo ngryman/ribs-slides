@@ -467,8 +467,12 @@
 	}
 
 //// DEBUG
-	exports.newAdvantagesProductEnter = function(e) {
+	exports.newAdvantagesProductEnter = function(el) {
 		document.documentElement.classList.add('dark');
+
+		el.addEventListener('click', function() {
+			el.querySelector('img').classList.add('active');
+		});
 	};
 
 	exports.newAdvantagesCommunicationEnter = function(el) {
