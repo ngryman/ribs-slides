@@ -466,15 +466,6 @@
 		}, 8000);
 	}
 
-//// DEBUG
-	exports.newAdvantagesProductEnter = function(el) {
-		document.documentElement.classList.add('dark');
-
-		el.addEventListener('click', function() {
-			el.querySelector('img').classList.add('active');
-		});
-	};
-
 	exports.newAdvantagesCommunicationEnter = function(el) {
 		/// DEBUG
 		document.documentElement.classList.add('dark');
@@ -492,6 +483,20 @@
 		}
 
 		Speach.keyHandler = keyHandler;
+	};
+
+	exports.newAdvantagesProductEnter = function(el) {
+		//// DEBUG
+		document.documentElement.classList.add('dark');
+
+		el.addEventListener('click', function() {
+			el.querySelector('img').classList.add('active');
+		});
+	};
+
+	exports.newAdvantagesStrategyEnter = function(el) {
+		//// DEBUG
+		document.documentElement.classList.add('dark');
 	};
 
 	exports.newAdvantagesCommunicationLeave = function() {
