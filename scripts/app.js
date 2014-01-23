@@ -689,6 +689,23 @@
 		};
 	}
 
+	exports.openSourceRisksDescEnter = function() {
+		//// DEBUG
+		document.documentElement.classList.add('dark');
+	};
+
+	exports.ribsFinishEnter = function(el) {
+		//// DEBUG
+		document.documentElement.classList.add('dark');
+
+		setTimeout(function() {
+			var t = el.querySelector('template');
+			var container = t.parentNode;
+			var clone = document.importNode(t.content, true);
+			container.appendChild(clone);
+		}, 500);
+	};
+
 	/**
 	 * Devices buttons
 	 */
