@@ -366,50 +366,61 @@
 
 	exports.fakeEndEnter = function(el) {
 		setTimeout(function() {
-			el.querySelector('h2').style.display = 'none';
+			window.location.href = 'part2.html';
+		}, 8000);
+	}
 
-			document.documentElement.classList.add('dark');
+	exports.arrivalEnter = function(el) {
+		var space = document.querySelector('#space');
+		space.style.display = 'block';
 
-			var space = document.querySelector('#space');
-			space.style.display = 'block';
+		var hacker = document.querySelector('#hacker');
+		hacker.style.display = 'block';
+		hacker.offsetWidth;
+		hacker.classList.add('active');
 
-			var hacker = document.querySelector('#hacker');
-			hacker.style.display = 'block';
-			hacker.offsetWidth;
-			hacker.classList.add('active');
+		var canvas = space.querySelector('canvas');
+		canvas.width = window.innerWidth;
+		canvas.height = window.innerHeight;
 
-			var canvas = space.querySelector('canvas');
-			canvas.width = window.innerWidth;
-			canvas.height = window.innerHeight;
+		var ctx = canvas.getContext('2d');
+		var width = window.innerWidth;
+		var height = window.innerHeight;
 
-			var ctx = canvas.getContext('2d');
-			var width = window.innerWidth;
-			var height = window.innerHeight;
+		ctx.fillStyle = 'rgb(255, 255, 255)';
 
-			ctx.fillStyle = 'rgb(255, 255, 255)';
+		// stars
+		for (var i = 0; i < 400; i++) {
+			var x = Math.random() * width;
+			var y = Math.random() * height;
+			var r = Math.random() * 2;
 
-			// stars
-			for (var i = 0; i < 400; i++) {
-				var x = Math.random() * width;
-				var y = Math.random() * height;
-				var r = Math.random() * 2;
+			ctx.beginPath();
+			ctx.arc(x, y, r, 0, 2 * Math.PI, false);
+			ctx.fill();
+		}
 
-				ctx.beginPath();
-				ctx.arc(x, y, r, 0, 2 * Math.PI, false);
-				ctx.fill();
-			}
+		var yoda = document.querySelector('#yoda');
+		yoda.classList.add('active');
 
-			var yoda = document.querySelector('#yoda');
-			yoda.classList.add('active');
+		yoda.addEventListener('webkitAnimationEnd', function() {
+			this.style.webkitTransform = 'translate(-100%)';
 
-			yoda.addEventListener('webkitAnimationEnd', function() {
-				this.style.webkitTransform = 'translate(-100%)';
+			var speach = document.createElement('div');
+			speach.id = 'speach';
+			hacker.appendChild(speach);
+			speach.offsetWidth;
+			speach.innerHTML = "Hey! I'm <strong>Broda</strong>.<br> Don't you forget something young padawan?";
+			speach.classList.add('active');
 
-				var speach = document.createElement('div');
+			setTimeout(function() {
+				hacker.removeChild(speach);
+				speach = document.createElement('div');
 				speach.id = 'speach';
 				hacker.appendChild(speach);
 				speach.offsetWidth;
-				speach.innerHTML = "Hey! I'm <strong>Broda</strong>.<br> Don't you forget something young padawan?";
+				speach.style.textAlign = 'center';
+				speach.innerHTML = "The source bro!<br><strong>Use</strong> the <strong>source</strong>!";
 				speach.classList.add('active');
 
 				setTimeout(function() {
@@ -418,53 +429,44 @@
 					speach.id = 'speach';
 					hacker.appendChild(speach);
 					speach.offsetWidth;
+					speach.style.transition = '2s';
 					speach.style.textAlign = 'center';
-					speach.innerHTML = "The source bro!<br><strong>Use</strong> the <strong>source</strong>!";
+					speach.style.lineHeight = '280%';
+					speach.innerHTML = "A long time ago...";
 					speach.classList.add('active');
 
-					setTimeout(function() {
-						hacker.removeChild(speach);
-						speach = document.createElement('div');
-						speach.id = 'speach';
-						hacker.appendChild(speach);
-						speach.offsetWidth;
-						speach.style.transition = '2s';
-						speach.style.textAlign = 'center';
-						speach.style.lineHeight = '280%';
-						speach.innerHTML = "A long time ago...";
-						speach.classList.add('active');
+					// activate ships
+					space.querySelector('#firefox').classList.add('active');
+					space.querySelector('#ie').classList.add('active');
 
-						// activate ships
-						space.querySelector('#firefox').classList.add('active');
-						space.querySelector('#ie').classList.add('active');
+					space.classList.add('active');
+					space.addEventListener('transitionend', function(e) {
+						if (space !== e.target) return;
 
-						space.classList.add('active');
-						space.addEventListener('transitionend', function(e) {
-							if (space !== e.target) return;
+						// clean up
+						document.body.removeChild(hacker);
+						document.body.removeChild(space);
 
-							// clean up
-							document.body.removeChild(hacker);
-							document.body.removeChild(space);
-
-							// next slide
-							impress().next();
-						});
-					}, 5000);
+						// next slide
+						impress().next();
+					});
 				}, 5000);
-			});
+			}, 5000);
+		});
 
-			hacker.addEventListener('webkitTransitionEnd', function(e) {
-				if (hacker !== e.target || 'opacity' != e.propertyName) return;
+		hacker.addEventListener('webkitTransitionEnd', function(e) {
+			if (hacker !== e.target || 'opacity' != e.propertyName) return;
 
-				clearInterval(intervalId);
-			});
+			clearInterval(intervalId);
+		});
 
-			var iframe = hacker.querySelector('iframe');
+		var iframe = hacker.querySelector('iframe');
+		iframe.addEventListener('load', function() {
 			var e = new KeyboardEvent('keydown', { bubbles : true, cancelable : true, key : "Q", char : "Q", shiftKey : false });
 
 			intervalId = setInterval(iframe.contentDocument.dispatchEvent.bind(iframe.contentDocument, e), 10);
-		}, 8000);
-	}
+		});
+	};
 
 	exports.newAdvantagesCommunicationEnter = function(el) {
 		/// DEBUG
