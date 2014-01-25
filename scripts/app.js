@@ -79,14 +79,6 @@
 	}
 
 	exports.imagesTriangleEnter = function(el) {
-//        var r = Raphael(el.id, 900, 900),
-//            p;
-		<!---->
-//        p = r.path('M450,100 l445,600 l-890,0 l445,-600');
-//        p.attr('stroke-width', 5);
-//        p.attr('stroke-linecap', 'square');
-//        p.attr('stroke-linejoin', 'miter');
-
 		var legend = el.querySelectorAll('ul li');
 		legend[0].style.left = '51%';
 		legend[0].style.top = '3%';
@@ -131,7 +123,7 @@
 
 			// triangle
 			ctx.strokeStyle = '#000';
-			ctx.lineWidth = 10;
+			ctx.lineWidth = 5;
 			ctx.beginPath();
 			ctx.moveTo(p1x, p1y);
 			ctx.lineTo(p2x, p2y);
