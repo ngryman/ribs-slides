@@ -315,6 +315,13 @@ h2 strong {
 	cursor: pointer;
 }
 
+.step.embed .reload {
+    position: absolute;
+    right: -100px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+}
+
 .step.embed button.is-active {
 	border-color: #555;
 }

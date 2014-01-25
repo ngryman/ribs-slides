@@ -57,7 +57,7 @@
     background-size: 100%;
     width: 418px;
     height: 311px;
-    transition: 1s 1s;
+    transition: 1s 4s;
     -webkit-transform: translate(-30%, 10%) rotate(-20deg) scale(.1);
 }
 

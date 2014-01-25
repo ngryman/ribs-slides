@@ -708,11 +708,12 @@
 		}, 500);
 	};
 
+
 	/**
 	 * Devices buttons
 	 */
 
-	var buttons = document.querySelectorAll('.embed button');
+	var buttons = document.querySelectorAll('.embed aside button');
 	for (var i = 0; i < buttons.length; i++) {
 		buttons[i].addEventListener('click', function(e) {
 			var size = parseInt(e.target.innerText);
@@ -722,6 +723,14 @@
 			var active = container.querySelector('.is-active');
 			if (active) active.classList.remove('is-active');
 			e.target.classList.add('is-active');
+		});
+	}
+
+	var reloadButtons = document.querySelectorAll('.embed .reload');
+	for (var i = 0; i < reloadButtons.length; i++) {
+		reloadButtons[i].addEventListener('click', function(e) {
+			var iframe = e.target.parentNode.parentNode.querySelector('iframe');
+			iframe.src = iframe.src;
 		});
 	}
 
