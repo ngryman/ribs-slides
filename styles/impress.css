@@ -705,6 +705,33 @@ h2 strong {
 	content: "\e606";
 }
 
+/*
+    Sources
+*/
+
+.sources {
+    display: none;
+}
+
+#sources {
+    position: fixed;
+    margin: 20px;
+    bottom: 0;
+    left: 0;
+    color: #777;
+    font-size: 30%;
+    transition: 1s;
+    opacity: 0;
+}
+
+#sources li::before {
+    content: 'Source: ';
+}
+
+#sources.active {
+    opacity: 1;
+}
+
 
 
 

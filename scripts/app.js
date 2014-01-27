@@ -191,6 +191,19 @@
 
 	}
 
+	exports.imagesQualityCompressionEnter = function(el) {
+		setTimeout(function() {
+			var t = el.querySelector('template');
+			var container = t.parentNode;
+			var clone = document.importNode(t.content, true);
+			container.appendChild(clone);
+		}, 500);
+	};
+
+	exports.imagesQualityCompressionLeave = function(el) {
+		el.removeChild(el.querySelector('iframe'));
+	};
+
 	exports.ribsPitchEnter = function(el) {
 		var duration = 6000, steps = 3, step = 1;
 

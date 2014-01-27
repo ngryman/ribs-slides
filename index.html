@@ -64,25 +64,62 @@
         </div>
     </div>
 
+    <div id="responsive-devices-future" class="step wide center" data-x="0" data-y="0" data-z="-3000" data-rotate-z="45">
+        <img src="/images/responsive-devices-future.png">
+    </div>
+
     <div id="responsive-traffic" class="step number" data-x="0" data-y="0">
         <q>
             <strong>28<sup>%</sup></strong>
             <span>du traffic Internet est un <em>mobile</em> ou une <em>tablette</em>.</span>
         </q>
+
+        <ul class="sources">
+            <li>http://marketingland.com/mobile-traffic-now-28-percent-of-total-report-64218</li>
+        </ul>
+
+        <ul class="notes">
+            <li>Il y a 2 ans, 20%</li>
+            <li>D'ici 2 ans, x26</li>
+            <li>Certains pays, seule maniere d'acceder a Internet</li>
+            <li><b>Heterogeneite des reseaux (Fibre, DSL, 3G, satelite)</b></li>
+        </ul>
     </div>
 
     <div id="responsive-android" class="step number number-right" data-x="0" data-y="-200" data-z="200" data-rotate-x="-45">
         <q>
             <strong>300</strong>
-            <span>devices Android dominent <br><em>80<sup>%</sup> du marche.</em></span>
+            <span>devices Android dominent <br><em>80<sup>%</sup> des ventes.</em></span>
         </q>
+
+        <ul class="sources">
+            <li>http://www.idc.com/getdoc.jsp?containerId=prUS24442013</li>
+            <li>http://developer.android.com/about/index.html</li>
+        </ul>
+
+        <ul class="notes">
+            <li>Segmentation</li>
+            <li>Heterogeneite</li>
+            <li><b>Evolution des usages</b></li>
+        </ul>
     </div>
 
     <div id="responsive-load-time" class="step number number-top" data-x="0" data-y="-300" data-z="450" data-rotate-x="-90">
         <q>
-            <strong>87<sup>%</sup></strong>
+            <strong>85<sup>%</sup></strong>
             <span>des usagers <em>mobile</em> s'attendent a ce que les sites chargent <em>aussi vite</em> voir <em>plus vite</em> que sur desktop.</span>
         </q>
+
+        <ul class="sources">
+            <li>http://www.strangeloopnetworks.com/resources/infographics/web-performance-and-user-expectations/poster-visualizing-web-performance/</li>
+        </ul>
+
+        <ul class="notes">
+            <li>Transposent leur experience</li>
+            <li>57% ont deja eu des problemes sur mobile</li>
+            <li>La moitie ne reviennent pas sur des sites lents</li>
+            <li>33% chez la concurrence</li>
+        </ul>
     </div>
 
     <div id="responsive-problematic" class="step" data-x="2000" data-rotate="90">
@@ -326,14 +363,6 @@
 	    <q>
 		    <strong>0</strong>
 	    </q>
-	    <!--<svg class="smiley" width="256" height="256" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">-->
-		    <!--<g>-->
-			    <!--<path fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" d="m 19.380224,39.901132 c 0,0 4.860771,5.28501 12.770151,5.28501 7.909379,0 12.770152,-5.28501 12.770152,-5.28501"/>-->
-			    <!--<path fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" d="m 59.013798,30.326033 a 28.596857,28.596857 0 1 1 -57.1937144,0 28.596857,28.596857 0 1 1 57.1937144,0 z" transform="translate(1.5830593,1.5830584)" />-->
-			    <!--<path fill="#fff" d="m 25.2456,20.818995 a 4.2934899,4.2512827 0 1 1 -8.58698,0 4.2934899,4.2512827 0 1 1 8.58698,0 z" transform="translate(2,0)" />-->
-			    <!--<path fill="#fff" d="m 25.2456,20.818995 a 4.2934899,4.2512827 0 1 1 -8.58698,0 4.2934899,4.2512827 0 1 1 8.58698,0 z" transform="translate(20.09578,-5.2209472e-7)" />-->
-		    <!--</g>-->
-	    <!--</svg>-->
     </div>
 
     <div id="images-quality" class="step center wide" data-x="1000" data-z="1000">
@@ -342,13 +371,27 @@
         </q>
     </div>
 
-    <div id="images-quality-lena" class="step center wide" data-x="1000" data-rotate-z="45">
-        <q>
-            <img width="375" src="images/lena-5.jpg">
-            <img width="375" src="images/lena-10.jpg">
-            <img width="375" src="images/lena.jpg">
-            <img width="375" src="images/lena-0.jpg">
-        </q>
+    <div id="images-quality-resampling" class="step center wide quality-comp" data-x="1000" data-rotate-z="45">
+        <strong>Resampling</strong>
+        <img src="images/lena-small.jpg">
+        <img src="images/lena.jpg">
+        <span>Zoom</span>
+        <span>Naturelle</span>
+    </div>
+
+    <div id="images-quality-color-profiles" class="step center wide quality-comp quality-comp-simple" data-x="1000" data-rotate-z="45">
+        <strong>Profils couleurs</strong>
+        <img src="images/lena-color-profile.jpg">
+        <img src="images/lena.jpg">
+        <span>RGB</span>
+        <span>sRGB</span>
+    </div>
+
+    <div id="images-quality-compression" class="step center wide quality-comp" data-x="1000" data-rotate-z="45">
+        <strong>Compression</strong>
+        <template>
+            <iframe width="800" height="600" src="//www.youtube.com/embed/Fk6kV5N1rzs?autoplay=1" frameborder="0" allowfullscreen autoplay></iframe>
+        </template>
     </div>
 
     <div id="images-quality-browsers" class="step" data-x="1500" data-rotate-y="-45" data-rotate-z="45">
@@ -364,17 +407,6 @@
         </q>
     </div>
 
-    <div id="images-quality-algorithm" class="step tag-cloud tag-cloud" data-x="2000" data-z="400" data-rotate-y="-90" data-rotate-z="45">
-        <span>Bilinear</span>
-        <span>Bicubic</span>
-        <span>Sinc</span>
-        <span>Lanczos</span>
-        <span>hq2x</span>
-        <span class="heart">
-            ???
-        </span>
-    </div>
-
     <div id="images-cost" class="step center wide" data-x="2000">
         <q>
             <h2>Cout</h2>
@@ -384,10 +416,18 @@
     <div id="images-cost-description" class="step" data-x="2000">
         <strong>&Sigma;</strong>
         <div class="icon-box">installation</div>
-        <div class="icon-clock">temps</div>
+        <div class="icon-clock">automatisation</div>
         <div class="icon-tools">maintenabilite</div>
         <div class="icon-volume">evolutivite</div>
         <div class="icon-coin">prix</div>
+
+        <div class="notes">
+            Intallation: complexite, courbe d'apprentissage, temps
+            Automatisation: degre d'intervention humaine
+            Maintenabilite: cout d'entretien, mise a jour
+            Evolutivite: adaptation au changement, scalable
+            Prix: au long de la vie, initial - maintenance - changements
+        </div>
     </div>
 
     <div id="solutions" class="step title" data-x="1000">
@@ -581,27 +621,6 @@
         </div>
     </div>
 
-    <!--<div id="ribs-transcoding" class="step">-->
-        <!--<q>-->
-            <!--PNG + GIF + JPEG = <img src="images/webp.png">-->
-        <!--</q>-->
-    <!--</div>-->
-
-    <!--<div id="ribs-art-direction" class="step">-->
-        <!--<q>-->
-            <!--Explication-->
-        <!--</q>-->
-    <!--</div>-->
-
-    <!--<div id="ribs-future" class="step">-->
-        <!--<q>-->
-            <!--- Pre-caching-->
-            <!--- Permettre de modifier les parametres de sharpening (et autres) par image.-->
-            <!--- Détection cliente a d'autres plateformes: iOS, Android, Wordpress, etc...-->
-            <!--- Partenariats avec des plateformes de blogging ou autres.-->
-        <!--</q>-->
-    <!--</div>-->
-
     <div id="ribs-solutions" class="step table" data-y="1000" data-z="-600" data-rotate-x="-90">
         <strong>RIBS</strong>
         <table>
@@ -628,7 +647,13 @@
         </table>
     </div>
 
-    <div id="ribs-competitors" class="step" data-x="1000" data-rotate-x="-90">
+    <div id="ribs-competitors" class="step title" data-x="1000" data-rotate-x="-90"
+        <q>
+            <h2>Les <strong>concurrents</strong></h2>
+        </q>
+    </div>
+
+    <div id="ribs-competitors-list" class="step" data-x="1000" data-rotate-x="-90">
         <img src="images/responsiveio.jpg">
         <img src="images/resrcit.jpg">
         <img src="images/ressio.jpg">
@@ -690,9 +715,17 @@
         </ul>
     </div>
 
-    <div id="ribs-price-model" class="step wide">
+    <div id="ribs-price-model" class="step wide center">
 	    <q>
-		    <strong>1<sup>&#xa2;</sup></strong> <span>/</span> <i>image</i> <strong>+</strong> <strong>0.1<sup>&#xa2;</sup></strong> <span>/</span> <i>operation</i>
+            <div>
+                <strong>1<sup>$</sup></strong> <span>/</span> <i>mois</i><br>
+            </div>
+            <div>
+                <strong>1<sup>&#xa2;</sup></strong> <span>/</span> <i>image</i><br>
+            </div>
+            <div>
+                <strong>0.1<sup>&#xa2;</sup></strong> <span>/</span> <i>operation</i>
+            </div>
 	    </q>
 
 	    <div class="notes">
@@ -726,7 +759,9 @@
         </ul>
 
         <div class="notes">
-            ttfb: gros fournisseur de contenus
+            ttfb
+              sharding, optimisations, cache
+              gros fournisseur de contenus
         </div>
     </div>
 
@@ -765,9 +800,13 @@
     </div>
 </div>
 
+<ul id="sources">
+</ul>
+
 <script src="lib/impress.js"></script>
 <script src="lib/impress-console.js"></script>
 <script src="lib/impress-io.js"></script>
+<script src="lib/impress-sources.js"></script>
 <script src="lib/leap.min.js"></script>
 <script src="lib/impress-leap.js"></script>
 <script src="lib/raphael.js"></script>

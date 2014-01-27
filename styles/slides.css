@@ -138,10 +138,77 @@
     -webkit-transform: scale(1.5);
 }
 
+
+.quality-comp {
+    height: 900px;
+}
+
+.quality-comp span {
+    position: absolute;
+    color: #777;
+    top: 750px;
+    opacity: 0;
+    transition: 2s 6s;
+}
+
+.quality-comp.active span {
+    opacity: 1;
+}
+
+.quality-comp span:first-of-type {
+    left: 240px;
+}
+
+.quality-comp span:last-of-type {
+    left: 850px;
+}
+
+.quality-comp img {
+    position: absolute;
+    top: 50%;
+    border: 15px solid #fff;
+    box-shadow: 0 0 10px #333;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+}
+
+.quality-comp img:first-of-type {
+    width: 100px;
+    transition: width 2s 2s, -webkit-transform 1s 6s;
+}
+
+.quality-comp img:last-of-type {
+    opacity: 0;
+    transition: 2s 6s;
+    -webkit-transform: translate(10%, -50%);
+}
+
+.quality-comp.active img:first-of-type {
+    width: 512px;
+    -webkit-transform: translate(-110%, -50%);
+}
+
+.quality-comp.active img:last-of-type {
+    opacity: 1;
+}
+
+.quality-comp-simple img:first-of-type {
+    width: auto;
+    transition-delay: 2s;
+}
+
+.quality-comp-simple img:last-of-type {
+    transition-delay: 2s;
+}
+
+.quality-comp-simple span {
+    transition-delay: 2s;
+}
+
 #images-quality-hard q {
     display: inline-block;
     -webkit-transform-origin: right bottom;
-    transition: 2s 2s;
+    transition: 2s 3s;
 }
 
 #images-quality-hard.active q {
@@ -149,7 +216,7 @@
 }
 
 #images-quality-hard .fadeout {
-    transition: 1s 2s;
+    transition: 1s 3s;
 }
 
 #images-cost-description strong {
@@ -492,11 +559,11 @@
     height: 80px;
 }
 
-#ribs-competitors {
+#ribs-competitors-list {
     text-align: center;
 }
 
-#ribs-competitors img {
+#ribs-competitors-list img {
     margin: 10px;
     border: 10px solid #333;
     height: 70px;
@@ -507,74 +574,100 @@
     transition: 1s;
 }
 
-#ribs-competitors.active img {
+#ribs-competitors-list.active img {
     opacity: 1;
     -webkit-transform: rotateX(0);
     -webkit-animation: move-around 10s infinite;
 }
 
-#ribs-competitors.active img:nth-child(1) {
+#ribs-competitors-list.active img:nth-child(1) {
     transition-delay: .3s;
     -webkit-animation-delay: .3s;
 }
 
-#ribs-competitors.active img:nth-child(2) {
+#ribs-competitors-list.active img:nth-child(2) {
     transition-delay: .6s;
     -webkit-animation-delay: .6s;
 }
 
-#ribs-competitors.active img:nth-child(3) {
+#ribs-competitors-list.active img:nth-child(3) {
     transition-delay: .9s;
     -webkit-animation-delay: .9s;
 }
 
-#ribs-competitors.active img:nth-child(4) {
+#ribs-competitors-list.active img:nth-child(4) {
     transition-delay: 1.2s;
     -webkit-animation-delay: 1.2s;
 }
 
-#ribs-competitors.active img:nth-child(5) {
+#ribs-competitors-list.active img:nth-child(5) {
     transition-delay: 1.5s;
     -webkit-animation-delay: 1.5s;
 }
 
-#ribs-competitors.active img:nth-child(6) {
+#ribs-competitors-list.active img:nth-child(6) {
     transition-delay: 1.8s;
     -webkit-animation-delay: 1.8s;
 }
 
-#ribs-competitors.active img:nth-child(7) {
+#ribs-competitors-list.active img:nth-child(7) {
     transition-delay: 2.1s;
     -webkit-animation-delay: 2.1s;
 }
 
-#ribs-competitors.active img:nth-child(8) {
+#ribs-competitors-list.active img:nth-child(8) {
     transition-delay: 2.3s;
     -webkit-animation-delay: 2.3s;
 }
 
-#ribs-price-model sup {
+#ribs-price-model div {
+    opacity: 0;
+    transition: 1s;
+}
+
+#ribs-price-model.active div {
+    opacity: 1;
+}
+
+#ribs-price-model.active div:nth-of-type(1) {
+    transition-delay: 1s;
+}
+
+#ribs-price-model.active div:nth-of-type(2) {
+    transition-delay: 2s;
+}
+
+#ribs-price-model.active div:nth-of-type(3) {
+    transition-delay: 3s;
+}
+
+#ribs-price-model q sup {
     font-size: 50%;
     vertical-align: super;
 }
 
-#ribs-price-model strong {
+#ribs-price-model q strong {
+    display: inline-block;
+    margin-bottom: 20px;
+    text-align: right;
     font-size: 200%;
+    width: 340px;
 }
 
-#ribs-price-model strong:nth-of-type(2) {
-    margin: 30px;
-}
-
-#ribs-price-model span {
+#ribs-price-model q span {
+    margin: 0 20px;
     font-size: 200%;
     color: #ccc;
 }
 
-#ribs-price-model i {
+
+#ribs-price-model q i {
+    display: inline-block;
+    text-align: left;
     vertical-align: super;
     color: #999;
     font-size: 120%;
+    width: 340px;
 }
 
 .advantages strong {
