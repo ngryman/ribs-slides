@@ -138,6 +138,34 @@
     -webkit-transform: scale(1.5);
 }
 
+#images-footprint-curve img:first-of-type {
+	box-shadow: 0 0 20px #111;
+}
+
+#images-footprint-curve img[src*=smileys] {
+	position: relative;
+	width: 64px;
+}
+
+#images-footprint-curve img[src*=glasses] {
+	left: -295px;
+}
+
+#images-footprint-curve img[src*=big] {
+	left: -315px;
+}
+
+#images-footprint-curve img[src*=wink] {
+	left: -330px;
+}
+
+#images-footprint-curve img[src*=plain] {
+	left: -315px;
+}
+
+#images-footprint-curve img[src*=sad] {
+	left: -20px;
+}
 
 .quality-comp {
     height: 900px;

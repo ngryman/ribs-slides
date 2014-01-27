@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://web.resource.org/cc/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="48px"
+   height="48px">
+  <g>
+    <path
+       sodipodi:type="arc"
+       style="fill:#f5871f;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="path1880"
+       sodipodi:cx="23.932585"
+       sodipodi:cy="23.932585"
+       sodipodi:rx="20.022472"
+       sodipodi:ry="20.022472"
+       d="M 43.955057 23.932585 A 20.022472 20.022472 0 1 1  3.9101124,23.932585 A 20.022472 20.022472 0 1 1  43.955057 23.932585 z" />
+    <path
+       sodipodi:type="arc"
+       style="fill:white;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="path4540"
+       sodipodi:cx="24"
+       sodipodi:cy="24"
+       sodipodi:rx="16"
+       sodipodi:ry="16"
+       d="M 40 24 A 16 16 0 1 1  8,24 A 16 16 0 1 1  40 24 z" />
+    <path
+       sodipodi:type="arc"
+       style="fill:#f5871f;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="path5427"
+       sodipodi:cx="15"
+       sodipodi:cy="18"
+       sodipodi:rx="6.0028286"
+       sodipodi:ry="1.9974097"
+       d="M 21.002829 18 A 6.0028286 1.9974097 0 1 1  8.9971714,18 A 6.0028286 1.9974097 0 1 1  21.002829 18 z"
+       transform="translate(2.997171,0)" />
+    <path
+       style="fill:none;fill-opacity:0.75;fill-rule:evenodd;stroke:#f5871f;stroke-width:4;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="M 13,27 C 19,35 29,35 35,27"
+       id="path6316"
+       sodipodi:nodetypes="cc" />
+    <path
+       transform="translate(16,0)"
+       d="M 19 18 A 4 3.9662924 0 1 1  11,18 A 4 3.9662924 0 1 1  19 18 z"
+       sodipodi:ry="3.9662924"
+       sodipodi:rx="4"
+       sodipodi:cy="18"
+       sodipodi:cx="15"
+       id="use7203"
+       style="fill:#f5871f;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       sodipodi:type="arc" />
+  </g>
+</svg>
