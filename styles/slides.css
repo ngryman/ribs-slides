@@ -643,44 +643,49 @@
     -webkit-animation: move-around 10s infinite;
 }
 
-#ribs-competitors-list.active img:nth-child(1) {
+#ribs-competitors-list.active img:nth-of-type(1) {
     transition-delay: .3s;
     -webkit-animation-delay: .3s;
 }
 
-#ribs-competitors-list.active img:nth-child(2) {
+#ribs-competitors-list.active img:nth-of-type(2) {
     transition-delay: .6s;
     -webkit-animation-delay: .6s;
 }
 
-#ribs-competitors-list.active img:nth-child(3) {
+#ribs-competitors-list.active img:nth-of-type(3) {
     transition-delay: .9s;
     -webkit-animation-delay: .9s;
 }
 
-#ribs-competitors-list.active img:nth-child(4) {
+#ribs-competitors-list.active img:nth-of-type(4) {
     transition-delay: 1.2s;
     -webkit-animation-delay: 1.2s;
 }
 
-#ribs-competitors-list.active img:nth-child(5) {
+#ribs-competitors-list.active img:nth-of-type(5) {
     transition-delay: 1.5s;
     -webkit-animation-delay: 1.5s;
 }
 
-#ribs-competitors-list.active img:nth-child(6) {
+#ribs-competitors-list.active img:nth-of-type(6) {
     transition-delay: 1.8s;
     -webkit-animation-delay: 1.8s;
 }
 
-#ribs-competitors-list.active img:nth-child(7) {
+#ribs-competitors-list.active img:nth-of-type(7) {
     transition-delay: 2.1s;
     -webkit-animation-delay: 2.1s;
 }
 
-#ribs-competitors-list.active img:nth-child(8) {
-    transition-delay: 2.3s;
-    -webkit-animation-delay: 2.3s;
+#ribs-competitors-list.active img:nth-of-type(8) {
+	transition-delay: 2.4s;
+	-webkit-animation-delay: 2.4s;
+}
+
+#ribs-competitors-list.active img:nth-of-type(9) {
+	transition-delay: 2.7s;
+	-webkit-animation-delay: 2.7s;
 }
 
 #ribs-price-model div {
