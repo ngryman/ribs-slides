@@ -3,52 +3,34 @@
 		intervalId;
 
 	exports.responsiveEnter = function(el) {
-		el.addEventListener('click', function() {
+		this.keyEnter(function() {
 			el.classList.add('images');
 		});
-	}
+	};
 
 	exports.responsiveDevicesEnter = function(el) {
 		var duration = 6000, steps = 3, step = 1;
 
-		intervalId = setInterval(function() {
+		this.interval(function() {
 			el.querySelector('.animation').setAttribute('data-animation-step', step = ++step > steps ? 1 : step);
 		}, duration / steps);
-	}
-
-	exports.responsiveDevicesLeave = function() {
-		clearInterval(intervalId);
-	}
+	};
 
 	exports.imagesComparisonHnicEnter = function(el) {
-		setTimeout(function() {
-			var t = el.querySelector('template');
-			var container = t.parentNode;
-			var clone = document.importNode(t.content, true);
-			container.appendChild(clone);
-		}, 500);
-	}
+		this.embed(el.querySelector('.embed-wrapper'), 'http://www.jfkthesmokinggun.ca/');
+	};
 
 	exports.imagesComparisonAmcEnter = function(el) {
-		setTimeout(function() {
-			var t = el.querySelector('template');
-			var container = t.parentNode;
-			var clone = document.importNode(t.content, true);
-			container.appendChild(clone);
-		}, 500);
-	}
+		this.embed(el.querySelector('.embed-wrapper'), 'http://www.amctv.com/shows/the-walking-dead/episodes/season-4/too-far-gone/story-sync');
+	};
 
 	exports.imagesComparisonPurpleEnter = function(el) {
-		setTimeout(function() {
-			var t = el.querySelector('template');
-			var container = t.parentNode;
-			var clone = document.importNode(t.content, true);
-			container.appendChild(clone);
-		}, 500);
-	}
+		this.embed(el.querySelector('.embed-wrapper'), 'http://duo.tv5.ca/channel/tv5');
+	};
 
 	exports.performanceImagesEnter = function(el) {
 		var r = Raphael(el.id);
+		this.garbage(r.canvas);
 
 		var pie = r.piechart(500, 450, 300, [46, 28, 2, 24], {
 			stroke: '#EEE',
@@ -76,17 +58,9 @@
 				transform: 's1.1 1.1 ' + this.cx + ' ' + this.cy + ' t0 -20'
 			}, 1000, 'bounce');
 		}, 1000);
-	}
+	};
 
 	exports.imagesTriangleEnter = function(el) {
-		var legend = el.querySelectorAll('ul li');
-		legend[0].style.left = '51%';
-		legend[0].style.top = '3%';
-		legend[1].style.left = '96%';
-		legend[1].style.top = '85%';
-		legend[2].style.left = '5%';
-		legend[2].style.top = '85%';
-
 		var canvas = document.createElement('canvas'),
 			ctx = canvas.getContext('2d');
 
@@ -100,7 +74,7 @@
 		ctx.webkitImageSmoothingEnabled = true;
 
 		var d = 0, incr = 0.005, step = 0;
-		intervalId = requestAnimationFrame(function frame() {
+		this.raf(function frame() {
 			var m = [
 				{ x: (p2x - p1x) * d + p1x, y: (p2y - p1y) * d + p1y },
 				{ x: (p3x - p2x) * d + p2x, y: (p3y - p2y) * d + p2y },
@@ -136,21 +110,16 @@
 				d = 0;
 				step++;
 			}
-
-			intervalId = requestAnimationFrame(frame);
 		});
 
 		el.appendChild(canvas);
-	}
-
-	exports.imagesTriangleLeave = function() {
-		cancelAnimationFrame(intervalId);
-	}
+		this.garbage(canvas);
+	};
 
 	exports.imagesGoalEnter = function(el) {
-		var graph = new ResolutionGraph(el, [ 320, 768, 1024, 1280 ]);
+		var graph = new ResolutionGraph(el, [ 320, 768, 1024, 1280 ], this);
 
-		graph.click(function(rects, step) {
+		graph.key(function(rects, step) {
 			switch (step) {
 				case 1:
 					rects.forEach(function(r) {
@@ -176,7 +145,7 @@
 		});
 
 		graphs['images'] = graph;
-	}
+	};
 
 	exports.imagesExampleFootprintEnter = function(el) {
 		var graph = graphs['images'],
@@ -188,75 +157,19 @@
 			el.innerText = ++i;
 			if (footprint == i) clearInterval(intervalId);
 		}, 30);
-
-	}
-
-	exports.imagesQualityCompressionEnter = function(el) {
-		setTimeout(function() {
-			var t = el.querySelector('template');
-			var container = t.parentNode;
-			var clone = document.importNode(t.content, true);
-			container.appendChild(clone);
-		}, 500);
 	};
 
-	exports.imagesQualityCompressionLeave = function(el) {
-		el.removeChild(el.querySelector('iframe'));
+	exports.imagesQualityCompressionEnter = function(el) {
+		this.embed(el, '//www.youtube.com/embed/Fk6kV5N1rzs?autoplay=1', 800, 600);
 	};
 
 	exports.ribsPitchEnter = function(el) {
 		var duration = 6000, steps = 3, step = 1;
 
-		intervalId = setInterval(function() {
+		this.interval(function() {
 			el.querySelector('.animation').setAttribute('data-animation-step', step = ++step > steps ? 1 : step);
 		}, duration / steps);
-	}
-
-	exports.ribsPitchLeave = function() {
-		clearInterval(intervalId);
-	}
-
-	exports.ribsAdvantagesEnter = function(el) {
-		var canvas = document.createElement('canvas'),
-			ctx = canvas.getContext('2d');
-
-		var p1x = 455, p1y = 100,
-			p2x = 890, p2y = 700,
-			p3x = 10,   p3y = 700;
-
-		canvas.width = 900;
-		canvas.height = 900;
-
-		ctx.strokeStyle = '#bbb';
-		ctx.webkitImageSmoothingEnabled = true;
-
-		// triangle
-		ctx.lineWidth = 5;
-		ctx.beginPath();
-		ctx.moveTo(p1x, p1y);
-		ctx.lineTo(p2x, p2y);
-		ctx.lineTo(p3x, p3y);
-		ctx.closePath();
-		ctx.stroke();
-
-		ctx.lineWidth = 2;
-
-		// lines
-		ctx.beginPath();
-		ctx.moveTo(280, 335);
-		ctx.lineTo(620, 335);
-		ctx.stroke();
-		ctx.beginPath();
-		ctx.moveTo(200, 450);
-		ctx.lineTo(710, 450);
-		ctx.stroke();
-		ctx.beginPath();
-		ctx.moveTo(110, 565);
-		ctx.lineTo(790, 565);
-		ctx.stroke();
-
-		el.appendChild(canvas);
-	}
+	};
 
 	exports.ribsAdvantagesPriceImagesEnter = function(el) {
 		var p, ribs, step = 0;
@@ -264,6 +177,7 @@
 		var r = Raphael(el.id, '100%', '100%');
 		r.setViewBox(-20, -20, 1980, 1140);
 		r.canvas.setAttribute('preserveAspectRatio', 'none');
+		this.garbage(r.canvas);
 
 //	// boxes
 //	p = r.path('M0,0 l980,0 l0,550 l-980,0 l0,-550');
@@ -299,7 +213,7 @@
 		r.path('M1240,0 l0,1100');
 		r.path('M0,400 l1960,0');
 
-		el.addEventListener('click', function() {
+		this.keyEnter(function() {
 			step++;
 
 			if (1 == step) {
@@ -309,7 +223,7 @@
 				ribs.animate({ path: 'M0,1100 L1970,1000 L1970,1110 L0,1110' }, 1000);
 			}
 		});
-	}
+	};
 
 	exports.ribsAdvantagesPriceTrafficEnter = function(el) {
 		var p, ribs, step = 0;
@@ -317,6 +231,7 @@
 		var r = Raphael(el.id, '100%', '100%');
 		r.setViewBox(-20, -20, 1980, 1140);
 		r.canvas.setAttribute('preserveAspectRatio', 'none');
+		this.garbage(r.canvas);
 
 //	// boxes
 //	p = r.path('M0,0 l980,0 l0,550 l-980,0 l0,-550');
@@ -351,14 +266,14 @@
 		r.path('M1240,0 l0,1100');
 		r.path('M0,400 l1960,0');
 
-		el.addEventListener('click', function() {
+		this.keyEnter(function() {
 			step++;
 
 			if (1 == step) {
 				ribs.animate({ path: 'M0,1100 L1970,1110 L1970,1110 L0,1110' }, 1000, 'bounce');
 			}
 		});
-	}
+	};
 
 	exports.ribsFirstEndEnter = function(el) {
 		setTimeout(function() {
@@ -373,7 +288,7 @@
 		setTimeout(function() {
 			window.location.href = 'part2.html';
 		}, 8000);
-	}
+	};
 
 	exports.arrivalEnter = function(el) {
 		var space = document.querySelector('#space');
@@ -474,9 +389,6 @@
 	};
 
 	exports.newAdvantagesCommunicationEnter = function(el) {
-		/// DEBUG
-		document.documentElement.classList.add('dark');
-
 		setTimeout(Speach.create.bind(null, el), 2000);
 		document.addEventListener('keyup', keyHandler);
 
@@ -493,17 +405,9 @@
 	};
 
 	exports.newAdvantagesProductEnter = function(el) {
-		//// DEBUG
-		document.documentElement.classList.add('dark');
-
 		el.addEventListener('click', function() {
 			el.querySelector('img').classList.add('active');
 		});
-	};
-
-	exports.newAdvantagesStrategyEnter = function(el) {
-		//// DEBUG
-		document.documentElement.classList.add('dark');
 	};
 
 	exports.newAdvantagesCommunicationLeave = function() {
@@ -519,11 +423,11 @@
 
 			intervalId = setTimeout(rotateRandom, Math.random() * 2000 + 1000);
 		}();
-	}
+	};
 
 	exports.openProjectsLeave = function() {
 		clearTimeout(intervalId);
-	}
+	};
 
 	exports.githubCommunitiesEnter = function(el) {
 		!function rotateRandom() {
@@ -534,11 +438,11 @@
 
 			intervalId = setTimeout(rotateRandom, Math.random() * 1000);
 		}();
-	}
+	};
 
 	exports.githubCommunitiesLeave = function() {
 		clearTimeout(intervalId);
-	}
+	};
 
 	exports.newAdvantagesProduct = function() {
 		var settings = {
@@ -694,17 +598,9 @@
 
 			draw();
 		};
-	}
-
-	exports.openSourceRisksDescEnter = function() {
-		//// DEBUG
-		document.documentElement.classList.add('dark');
 	};
 
 	exports.ribsFinishEnter = function(el) {
-		//// DEBUG
-		document.documentElement.classList.add('dark');
-
 		setTimeout(function() {
 			var t = el.querySelector('template');
 			var container = t.parentNode;

@@ -3,13 +3,14 @@
 
 	var WIDTH = 1920;
 
-	function ResolutionGraph(el, resolutions) {
+	function ResolutionGraph(el, resolutions, helpers) {
 		// add final resolution
 		resolutions.push(1920);
 
 		var r = Raphael(el.id, '100%', '100%');
 		r.setViewBox(-20, -20, 1960, 1960);
 		r.canvas.setAttribute('preserveAspectRatio', 'none');
+		helpers.garbage(r.canvas);
 
 		// legend list
 		var legendList = document.createElement('ul');
@@ -53,17 +54,19 @@
 
 		// add legend list to DOM
 		el.appendChild(legendList);
+		helpers.garbage(legendList);
 
 		// assign properties
 		this.el = el;
+		this.helpers = helpers;
 		this.resolutions = resolutions;
 		this.line = line;
 		this.rects = rects;
 		this.step = 0;
 	}
 
-	ResolutionGraph.prototype.click = function(fn) {
-		this.el.addEventListener('click', function(e) {
+	ResolutionGraph.prototype.key = function(fn) {
+		this.helpers.keyEnter(function(e) {
 			fn(this.rects, ++this.step);
 		}.bind(this));
 	};
