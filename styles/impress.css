@@ -364,6 +364,10 @@ h2 strong {
 	color: rgb(255, 194, 0);
 }
 
+.rating .inactive {
+	color: #eee;
+}
+
 .rating .half {
 	position: relative;
 	color: #ccc;

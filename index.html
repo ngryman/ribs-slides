@@ -198,12 +198,17 @@
 	    </ul>
     </div>
 
-    <div id="performance-weight" class="step photo" data-x="1000" data-z="-2000" data-rotate="180" data-rotate-z="720" data-rotate-x="90">
+    <div id="performance-weight" class="step photo center" data-x="1000" data-z="-2000" data-rotate="180" data-rotate-z="720" data-rotate-x="90">
+	    <strong>Poids d'un site</strong>
         <img src="images/weight.png">
 
         <ul class="notes">
             <li>Loi de Moore</li>
         </ul>
+
+	    <ul class="sources">
+		    <li>http://httparchive.org/compare.php</li>
+	    </ul>
     </div>
 
     <div id="performance-composition" class="step number" data-x="1000" data-z="0" data-rotate="180" data-rotate-z="720" data-rotate-x="180">
@@ -218,6 +223,10 @@
             <li>JFK: 2.2/3.3 (66%)</li>
             <li>AMC episde 8: 7.5/12.8 (58%)</li>
         </ul>
+
+	    <ul class="sources">
+		    <li>http://httparchive.org/interesting.php#bytesperpage</li>
+	    </ul>
     </div>
 
     <div id="performance-hidpi" class="step wide center" data-x="2000" data-z="0" data-rotate="180" data-rotate-z="630" data-rotate-x="180">
@@ -250,16 +259,11 @@
             <li>GIF</li>
             <li>Others</li>
         </ul>
-    </div>
 
-    <!--<div id="images-problematic" class="step">-->
-        <!--<q>-->
-            <!--<span class="fadeout">Offrir les </span><strong>mêmes images</strong><br>-->
-            <!--<span class="fadeout">sur tous les <em>devices</em>,<br>-->
-            <!--accessible de <em>partout</em>,<br>-->
-            <!--et de manière </span><em>performante</em>.-->
-        <!--</q>-->
-    <!--</div>-->
+	    <ul class="sources">
+		    <li>http://httparchive.org/interesting.php#imageformats</li>
+	    </ul>
+    </div>
 
     <div id="images-responsive" class="step wide">
         <q>
@@ -382,7 +386,9 @@
 	    </figure>
     </div>
 
-    <div id="images-footprint-curve" class="step" data-x="500" data-rotate-y="-45" data-rotate-z="45">
+    <div id="images-footprint-curve" class="step graphic graphic-rect graphic-small-legend" data-x="500" data-rotate-y="-45" data-rotate-z="45">
+	    <strong>Impact</strong>
+	    <strong>Aire</strong>
 	    <figure>
 		    <img src="images/curve.svg">
 		    <img src="images/smileys/glasses.svg">
@@ -471,21 +477,21 @@
 	        <tbody>
 		        <tr>
 			        <th>Performance <sup>x2</sup></th>
-			        <td class="rating" style="text-indent: 1000px; overflow: hidden;">0</td>
+			        <td class="rating" style=""><span class="inactive">★★★★★</span></td>
 		        </tr>
 		        <tr>
 			        <th>Qualité</th>
-			        <td class="rating">★★★★</td>
+			        <td class="rating">★★★★<span class="inactive">★</span></td>
 		        </tr>
 		        <tr>
 			        <th>Coût</th>
-			        <td class="rating">★★★★</td>
+			        <td class="rating">★★★★<span class="inactive">★</span></td>
 		        </tr>
 	        </tbody>
 	        <tfoot>
 	            <tr>
 		            <th>Total</th>
-		            <td class="rating">★★</td>
+		            <td class="rating">★★<span class="inactive">★★★</span></td>
 	            </tr>
 	        </tfoot>
         </table>
@@ -497,21 +503,21 @@
 	        <tbody>
 		        <tr>
 			        <th>Performance <sup>x2</sup></th>
-			        <td class="rating">★★</td>
+			        <td class="rating">★★<span class="inactive">★★★</span></td>
 		        </tr>
 		        <tr>
 			        <th>Qualité</th>
-			        <td class="rating">★★★</td>
+			        <td class="rating">★★★<span class="inactive">★★</span></td>
 		        </tr>
 		        <tr>
 			        <th>Coût</th>
-			        <td class="rating">★★</td>
+			        <td class="rating">★★<span class="inactive">★★★</span></td>
 		        </tr>
 	        </tbody>
 	        <tfoot>
 		        <tr>
 			        <th>Total</th>
-			        <td class="rating">★★</td>
+			        <td class="rating">★★<span class="inactive">★★★</span></td>
 		        </tr>
 	        </tfoot>
         </table>
@@ -523,21 +529,21 @@
 	        <tbody>
 		        <tr>
 			        <th>Performance <sup>x2</sup></th>
-			        <td class="rating">★★★</td>
+			        <td class="rating">★★★<span class="inactive">★★</span></td>
 		        </tr>
 		        <tr>
 			        <th>Qualité</th>
-			        <td class="rating">★★★★</td>
+			        <td class="rating">★★★★<span class="inactive">★</span></td>
 		        </tr>
 		        <tr>
 			        <th>Coût</th>
-			        <td class="rating">★★★</td>
+			        <td class="rating">★★★<span class="inactive">★★</span></td>
 		        </tr>
 	        </tbody>
 	        <tfoot>
 		        <tr>
 			        <th>Total</th>
-			        <td class="rating">★★★</td>
+			        <td class="rating">★★★<span class="inactive">★★</span></td>
 		        </tr>
 	        </tfoot>
         </table>
@@ -553,21 +559,21 @@
 	        <tbody>
 		        <tr>
 			        <th>Performance <sup>x2</sup></th>
-			        <td class="rating">★★★★</td>
+			        <td class="rating">★★★★<span class="inactive">★</span></td>
 		        </tr>
 		        <tr>
 			        <th>Qualité</th>
-			        <td class="rating">★★★★</td>
+			        <td class="rating">★★★★<span class="inactive">★</span></td>
 		        </tr>
 		        <tr>
 			        <th>Coût</th>
-			        <td class="rating">★★★★</td>
+			        <td class="rating">★★★★<span class="inactive">★</span></td>
 		        </tr>
 	        </tbody>
 	        <tfoot>
 		        <tr>
 			        <th>Total</th>
-			        <td class="rating">★★★★</td>
+			        <td class="rating">★★★★<span class="inactive">★</span></td>
 		        </tr>
 	        </tfoot>
         </table>

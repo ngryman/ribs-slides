@@ -173,33 +173,43 @@
     -webkit-transform: scale(1.5);
 }
 
+#images-footprint-curve figure {
+	position: relative;
+}
+
+#images-footprint-curve strong:last-of-type {
+	top: -15%;
+	left: 50%;
+}
+
 #images-footprint-curve img:first-of-type {
 	box-shadow: 0 0 20px #111;
 }
 
 #images-footprint-curve img[src*=smileys] {
-	position: relative;
+	position: absolute;
+	right: -100px;
 	width: 64px;
 }
 
 #images-footprint-curve img[src*=glasses] {
-	left: -295px;
+	top: 525px;
 }
 
 #images-footprint-curve img[src*=big] {
-	left: -315px;
+	top: 400px;
 }
 
 #images-footprint-curve img[src*=wink] {
-	left: -330px;
+	top: 275px;
 }
 
 #images-footprint-curve img[src*=plain] {
-	left: -315px;
+	top: 150px;
 }
 
 #images-footprint-curve img[src*=sad] {
-	left: -20px;
+	top: 30px;
 }
 
 .quality-comp {
