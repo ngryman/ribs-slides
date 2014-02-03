@@ -838,6 +838,7 @@
 
 #open-source strong {
 	color: transparent;
+    transition-duration: 2s;
 }
 
 #open-source.active strong {
@@ -974,6 +975,14 @@
 
 .community img:nth-child(2) { top: -15%; }
 .community img:nth-child(5) { top: 15%; }
+
+#new-advantages-gap img {
+    box-shadow: 0 0 30px #111;
+}
+
+#new-advantages-geek img {
+    box-shadow: 0 0 30px #111;
+}
 
 #ribs-h5bp h2 span {
 	color: #e08524;
@@ -1331,11 +1340,11 @@
     position: absolute;
     -webkit-transform: scaleY(0);
     transition: 2s;
-    -webkit-animation: fear 10s linear infinite;
 }
 
 .active .wolf {
     -webkit-transform: scaleY(1);
+    -webkit-animation: fear 10s linear infinite;
 }
 
 .wolf:nth-of-type(1) {
@@ -1568,6 +1577,8 @@
     0% { -webkit-transform: translate(0, 0) scaleY(1); }
     25% { -webkit-transform: translate(-10px, -5px) scaleY(1); }
     50% { -webkit-transform: translate(0, -10px) scaleY(1); }
+    51% { -webkit-transform: translate(0, -10px) scaleY(0); }
+    52% { -webkit-transform: translate(0, -10px) scaleY(1); }
     75% { -webkit-transform: translate(10px, -5px) scaleY(1); }
     100% { -webkit-transform: translate(0, 0) scaleY(1); }
 }

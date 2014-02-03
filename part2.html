@@ -22,27 +22,6 @@
 
 <body>
 
-<!--
-    
-    Now that's the core element used by impress.js.
-    
-    That's the wrapper for your presentation steps. In this element all the impress.js magic happens.
-    It doesn't have to be a `<div>`. Only `id` is important here as that's how the script find it.
-    
-    You probably won't need it now, but there are some configuration options that can be set on this element.
-    
-    To change the duration of the transition between slides use `data-transition-duration="2000"` giving it
-    a number of ms. It defaults to 1000 (1s).
-    
-    You can also control the perspective with `data-perspective="500"` giving it a number of pixels.
-    It defaults to 1000. You can set it to 0 if you don't want any 3D effects.
-    If you are willing to change this value make sure you understand how CSS perspective works:
-    https://developer.mozilla.org/en/CSS/perspective
-    
-    But as I said, you won't need it for now, so don't worry - there are some simple but interesting things
-    right around the corner of this tag ;)
-    
--->
 <div id="impress">
 
 <div id="arrival" class="step"></div>
@@ -51,6 +30,78 @@
     <q>
         <h2><strong>Open</strong> source <strong class="inline-heart"><3</strong></h2>
     </q>
+
+    <ul class="notes">
+        <li>Le projet sera OS</li>
+        <li>Axe strategique avantageux par rapport au concurrents</li>
+        <li>3 avantages</li>
+        <ul>
+            <li>mieux toucher notre cible</li>
+            <li>communication / marketing</li>
+            <li>produit</li>
+        </ul>
+    </ul>
+</div>
+
+<div id="os-target" class="step title wide">
+    <q>
+        <h2>La <strong>cible</strong></h2>
+    </q>
+</div>
+
+<div id="new-advantages-geek" class="step center">
+    <strong>g33k + 1337 = 42</strong>
+    <img src="images/geek.jpg">
+
+    <ul class="notes">
+        <li>Bien comprendre le geek</li>
+        <li>C'est lui qui prend la decision d'utiliser un outil</li>
+        <li>Coller a ses besoins</li>
+        <li>Outil / API sexy</li>
+    </ul>
+</div>
+
+<div id="new-advantages-communication" class="step wide center">
+    <div>
+        <div class="floor"></div>
+        <img src="images/personas/boxhead.png">
+        <img src="images/personas/emo.png">
+        <img src="images/personas/girl2.png">
+        <img src="images/personas/girl3.png">
+        <img src="images/personas/graduate.png">
+        <img src="images/personas/grandma.png">
+    </div>
+    <div>
+        <div class="floor"></div>
+        <img src="images/personas/grandpa.png">
+        <img src="images/personas/hoodie.png">
+        <img src="images/personas/kid3.png">
+        <img src="images/personas/man2.png">
+        <img src="images/personas/punk.png">
+    </div>
+    <div>
+        <div class="floor"></div>
+        <img src="images/personas/surfer.png">
+        <img src="images/personas/woman4.png">
+        <img src="images/personas/yoga.png">
+        <img src="images/personas/graduate.png">
+        <img src="images/personas/boxhead.png">
+        <img src="images/personas/girl2.png">
+    </div>
+    <div>
+        <div class="floor"></div>
+        <img src="images/personas/grandma.png">
+        <img src="images/personas/hoodie.png">
+        <img src="images/personas/punk.png">
+        <img src="images/personas/kid3.png">
+        <img src="images/personas/emo.png">
+    </div>
+
+    <ul class="notes">
+        <li>Animal social</li>
+        <li>Utilise beaucoup Github / Twitter / ... pour s'informer</li>
+        <li>Profiter de la viralite</li>
+    </ul>
 </div>
 
 <div id="open-projects" class="step wide center">
@@ -72,6 +123,18 @@
     <img src="images/open-source/sass.jpg">
     <img src="images/open-source/sublime.png">
     <img src="images/open-source/yo.png">
+
+    <ul class="notes">
+        <li>Culturel, OS tres present dans le Web</li>
+        <li>Stack LVL 100% OS</li>
+        <li>Si on veut s'ajouter au paysage il prendre ca en consideration</li>
+    </ul>
+</div>
+
+<div id="communication" class="step title wide">
+    <q>
+        <h2><strong>Communication</strong> & <strong>Marketing</strong></h2>
+    </q>
 </div>
 
 <div id="github" class="step center">
@@ -90,18 +153,23 @@
     </div>
 
     <div class="notes">
-        Project-centric
-        Follow & stars
-        API et outils qui classent
+        <li>Facebook du developpeur</li>
+        <li>PaaS, heberge et manager son code source</li>
+        <li>Debut 2013, 3.5+ M users</li>
+        <li>Fin 2013, 10 M repositories</li>
+        <li>Plateforme de predilection des porjet OS</li>
+        <li>Reseau social, communaute project centric, follow & stars</li>
+        <li>Ecosysteme, API, outils, classements</li>
+        <li>Stand dans un salon constemment ouvert</li>
     </div>
 </div>
 
 <div id="github-trends" class="step center">
     <img src="images/javascript-king.png">
-    <div class="notes">
-        Github archives + Google Big Query
-        1M+ JavaScript repo
-    </div>
+    <ul class="notes">
+        <li>1M+ JavaScript repo</li>
+        <li><em>Github archives + Google Big Query</em></li>
+    </ul>
 </div>
 
 <div id="github-communities" class="step">
@@ -150,19 +218,15 @@
         <img src="images/personas/boxhead.png">
     </div>
 
-    <div class="notes">
-        Package manager = app store version gratuite
-    </div>
-</div>
+    <ul class="notes">
+        <li>De maniere plus large, techno-centric</li>
+        <li>Package manager = app store version gratuite</li>
+        <li>npm, nodejs, javascript</li>
+    </ul>
 
-<div id="new-advantages" class="step title">
-    <q>
-        <h2>Nouveaux <strong>avantages</strong></h2>
-    </q>
-</div>
-
-<div id="new-advantages-geek" class="step center">
-    <img src="images/geek.jpg">
+    <ul class="sources">
+        <li>http://caines.ca/blog/programming/the-node-js-community-is-quietly-changing-the-face-of-open-source/</li>
+    </ul>
 </div>
 
 <div id="new-advantages-funels" class="step wide center">
@@ -234,45 +298,25 @@
     </q>
 </div>
 
-<div id="new-advantages-communication" class="step wide center">
-    <div>
-        <div class="floor"></div>
-        <img src="images/personas/boxhead.png">
-        <img src="images/personas/emo.png">
-        <img src="images/personas/girl2.png">
-        <img src="images/personas/girl3.png">
-        <img src="images/personas/graduate.png">
-        <img src="images/personas/grandma.png">
-    </div>
-    <div>
-        <div class="floor"></div>
-        <img src="images/personas/grandpa.png">
-        <img src="images/personas/hoodie.png">
-        <img src="images/personas/kid3.png">
-        <img src="images/personas/man2.png">
-        <img src="images/personas/punk.png">
-    </div>
-    <div>
-        <div class="floor"></div>
-        <img src="images/personas/surfer.png">
-        <img src="images/personas/woman4.png">
-        <img src="images/personas/yoga.png">
-        <img src="images/personas/graduate.png">
-        <img src="images/personas/boxhead.png">
-        <img src="images/personas/girl2.png">
-    </div>
-    <div>
-        <div class="floor"></div>
-        <img src="images/personas/grandma.png">
-        <img src="images/personas/hoodie.png">
-        <img src="images/personas/punk.png">
-        <img src="images/personas/kid3.png">
-        <img src="images/personas/emo.png">
-    </div>
+<div id="strategy" class="step title wide">
+    <q>
+        <h2>Avantages <strong>produit</strong></h2>
+    </q>
+</div>
 
-    <div class="notes">
-        Profiter de la viralite
-    </div>
+<div id="new-advantages-gap" class="step center">
+    <strong>Fill the gap</strong>
+    <img src="images/language-relationships.jpg">
+
+    <ul class="notes">
+        <li>Tres peu de solution viable pour node.js</li>
+        <li>Remplir un trou dans Node</li>
+        <li>Lier natif et node</li>
+    </ul>
+
+    <ul class="sources">
+        <li>http://www.igvita.com/slides/2012/bigquery-github-strata.pdf</li>
+    </ul>
 </div>
 
 <div id="new-advantages-product" class="step">
@@ -282,6 +326,24 @@
     <div class="quality"><div><span>Qualite</span></div></div>
     <div class="extensibility"><div><span>Extensibilite</span></div></div>
     <div class="personnalisation"><div><span>Personnalisation</span></div></div>
+</div>
+
+<div id="open-source-risks" class="step title">
+    <q>
+        <h2>Les <strong>risques</strong>?</h2>
+    </q>
+</div>
+
+<div id="open-source-risks-desc" class="step">
+    <img class="wolf" src="images/eyes.png"><span>IP</span>
+    <img class="wolf" src="images/eyes.png"><span>Perte</span>
+    <img class="wolf" src="images/eyes.png"><span>Concurrence</span>
+
+    <ul class="notes">
+        <li>IP: Licenses</li>
+        <li>Concurrence: leader, deja du succes</li>
+        <li>Perte: clients, argent</li>
+    </ul>
 </div>
 
 <div id="new-advantages-strategy" class="step">
@@ -300,27 +362,15 @@
         Social
     </div>
 
-    <div class="notes">
-        Le modele proprietaire est bride
-        Stabilite, qualite superieure
-        Meilleure QA
-        Gens investi (surtout dans l'open source)
-        Colle aux besoins
-        Feedback pro-actif
-        Bounties
-    </div>
-</div>
-
-<div id="open-source-risks" class="step title">
-    <q>
-        <h2>Quels <strong>risques</strong>?</h2>
-    </q>
-</div>
-
-<div id="open-source-risks-desc" class="step">
-    <img class="wolf" src="images/eyes.png"><span>IP</span>
-    <img class="wolf" src="images/eyes.png"><span>Perte</span>
-    <img class="wolf" src="images/eyes.png"><span>Concurrence</span>
+    <ul class="notes">
+        <li>Le modele proprietaire est bride</li>
+        <li>Stabilite, qualite superieure</li>
+        <li>Meilleure QA</li>
+        <li>Gens investi (surtout dans l'open source)</li>
+        <li>Colle aux besoins</li>
+        <li>Feedback pro-actif</li>
+        <li>Bounties</li>
+    </ul>
 </div>
 
 <div id="ribs-finish" class="step">
@@ -364,12 +414,14 @@
     <div id="yoda"></div>
 </div>
 
+<ul id="sources"></ul>
+
 <script src="lib/impress.js"></script>
 <script src="lib/impress-console.js"></script>
 <script src="lib/impress-io.js"></script>
-<script src="lib/raphael.js"></script>
-<script src="lib/g.raphael.js"></script>
-<script src="lib/g.pie.js"></script>
+<script src="lib/impress-sources.js"></script>
+<script src="lib/leap.min.js"></script>
+<script src="lib/impress-leap.js"></script>
 
 <script src="scripts/resolution-graph.js"></script>
 
