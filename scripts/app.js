@@ -390,18 +390,9 @@
 
 	exports.newAdvantagesCommunicationEnter = function(el) {
 		setTimeout(Speach.create.bind(null, el), 2000);
-		document.addEventListener('keyup', keyHandler);
-
-		function keyHandler(e) {
-			if (107 == e.keyCode) {
-				Speach.create(el);
-			}
-			else if (109 == e.keyCode) {
-				Speach.remove();
-			}
-		}
-
-		Speach.keyHandler = keyHandler;
+		this.keyEnter(function(e) {
+			Speach.create(el);
+		});
 	};
 
 	exports.newAdvantagesProductEnter = function(el) {
@@ -411,7 +402,6 @@
 	};
 
 	exports.newAdvantagesCommunicationLeave = function() {
-		document.removeEventListener('keyup', Speach.keyHandler);
 		Speach.cleanup();
 	};
 
@@ -688,8 +678,8 @@
 
 	Speach.create = function(container) {
 		var s = new Speach(container);
-		s.run();
 		Speach.speaches.push(s);
+		s.run();
 	};
 
 	Speach.cleanup = function() {
