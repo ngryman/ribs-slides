@@ -59,6 +59,7 @@
     <img src="images/geek.jpg">
 
     <ul class="notes">
+        <li>La cultures geek</li>
         <li>Animal curieux, inventif et passione</li>
         <li>Coller a ses besoins</li>
         <li>Outil / API sexy</li>
@@ -455,6 +456,10 @@
 <script>
     impress().init();
     impressConsole().init('styles/impress-console.css');
+
+    setTimeout(function() {
+        impressConsole().open();
+    }, 95 * 1000);
 </script>
 <script src="scripts/app.js"></script>
 

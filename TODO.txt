@@ -1,0 +1,56 @@
+- trop de temps demo comparaison
+- arreter de dire "on va parler un petit peu"
+- dans user love perf, intro contexte d'utilisation, exemple amazon
+- ajouter avantage sexiness
+
+
+DONE - ajouter slide plein de devices apres l'animation
+DONE - noter les chiffres
+DONE - noter les sources sur les slides
+DONE - accents sur le texte
+DONE - bouger perf as design apres citation
+DONE - definir layout
+DONE - supprimer "offir les meme images"
+- chiffres poids en slide en barres verticales apres 69%
+
+
+DONE - chiffres performances
+DONE - transitions sur la performance
+- dans hidpi, donner un exemple de poid de site LVL
+- passer moins de temps sur les exemples
+- transition entre performance / qualite / cout
+- parler des consequence visuelles des algo de resampling (artefact, aliasing, ...)
+DONE - sur le graphe ajouter les zones de valeurs
+DONE - dans performance again, IP au lieu de DNS dans les lib clientes
+KO - supprimer citation cache invalidation
+DONE - performance as design: perf pas seulement technique mais aussi design
+DONE - ajouter source poids sites
+KO  - image 1.5 au lieu de 1
+KO - les oreilles
+
+DONE - etoile vide pour montrer 5 etoiles
+DONE - build & on demand solutions existantes, poser le contexte que c'est celui qui fait le site
+DONE - switcher un projet existant sur ribs en 3min
+- pas se repeter sur la partie open source
+
+DONE - responsive design = responsive web design
+- nommer oralement les sources
+DONE - les fablettes
+DONE - illustrer le design ala facebook
+DONE - user xp vs business goals
+DONE  - une fois que ta repondu a ces attentes, voila ce que ca amene
+DONE - performance = gage de confiance (image)
+KO - legende ou titre sur poids sites
+- enlever formule mathematique?
+DONE - plus il y a de rouge moins le bonhomme il sourit
+DONE - legende courbe d'impact
+DONE  - quantite de rouge
+DONE - "Si on demandait a IE comment il resize les images"
+- solution on demand biezer car trop lineaire (pas 4 etoiles partout)
+KO - dans pres produit, mettre en moins d'opacite les point dont on a parle
+DONE - avant le chapitre concurrent donner le plan (en quoi on va etre meilleur)
+  - point negatifs concurrents (lent, cher)
+DONE - prix, parler des autres sources de revenus
+KO - avantage performance, animation part trop vite
+- kickstarter
+- curseur avec minimum 1$ avec 5$ est une biere.

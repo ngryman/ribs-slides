@@ -40,7 +40,7 @@
 #responsive-problematic q {
     display: inline-block;
     -webkit-transform-origin: right bottom;
-    transition: 2s 4s;
+    transition: 2s 6s;
 }
 
 #responsive-problematic.active q {
@@ -166,7 +166,7 @@
 #images-responsive q {
     display: inline-block;
     -webkit-transform-origin: 30% bottom;
-    transition: 2s 4s;
+    transition: 2s 6s;
 }
 
 #images-responsive.active q {

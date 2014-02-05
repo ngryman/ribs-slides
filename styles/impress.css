@@ -334,7 +334,7 @@ h2 strong {
 	Common classes
 */
 .fadeout {
-	transition: 1s 4s;
+	transition: 1s 6s;
 }
 
 .active .fadeout {
@@ -714,7 +714,7 @@ h2 strong {
 */
 
 .sources {
-    display: none;
+    display: none !important;
 }
 
 #sources {
